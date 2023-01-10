@@ -38,15 +38,13 @@ public class LoopsDemo {
 		 * update
 		 * }
 		 * while(condition);
-		 * 
 		 */
-		
 		int x1 = 1;
 		do
 		{
-			System.out.println(x*x);
-			x++;
-		}while(x1<=10);
+			System.out.println(x1*x1);
+			x1++;
+		}while(x1<11);
 		
 	}
 
