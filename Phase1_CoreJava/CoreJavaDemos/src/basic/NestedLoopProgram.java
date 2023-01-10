@@ -32,13 +32,15 @@ public class NestedLoopProgram {
 		Scanner sc = new Scanner(System.in);
 		System.out.println("How many customers");
 		int noofcustomers = sc.nextInt();
+		//int noofbills = 0;
+		int totalamount = 0;
 		for(int i=1;i<=noofcustomers;i++)
 		{
 			System.out.println("Enter name of customer "+i);
 			String name = sc.next();
 			System.out.println("Enter no of bills for customer "+name);
 			int noofbills = sc.nextInt();
-			int totalamount = 0;
+			totalamount = 0;
 			for(int j=1;j<=noofbills;j++)
 			{
 				System.out.println("Enter amount for bill "+j);
