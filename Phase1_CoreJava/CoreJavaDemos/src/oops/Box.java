@@ -6,7 +6,16 @@ public class Box {
 	private int width;
 	private int length;
 	private String color;
+	private boolean choice;
 	
+	
+	
+	public boolean isChoice() {
+		return choice;
+	}
+	public void setChoice(boolean choice) {
+		this.choice = choice;
+	}
 	// initialize => constructors
 	/*
 	 * 1. is a special method with the name same as the class name
