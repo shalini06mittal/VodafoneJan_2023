@@ -1,4 +1,4 @@
-package prodmngtsys;
+package prodmngtsys.entity;
 
 public class Product {
 

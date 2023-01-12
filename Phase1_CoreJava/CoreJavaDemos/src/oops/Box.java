@@ -28,6 +28,7 @@ public class Box {
 	// takes no parameters is called as default constructor
 	public Box() {
 		System.out.println("box default constructor");
+		// cms
 		height = 2;
 		width = 2;
 		length = 2;
@@ -78,6 +79,10 @@ public class Box {
 	public int calVolume()
 	{
 		return this.length * this.height * this.width;
+	}
+	public int calVolume(int divvalue)
+	{
+		return (this.length * this.height * this.width) / divvalue;
 	}
 	@Override
 	public String toString() {

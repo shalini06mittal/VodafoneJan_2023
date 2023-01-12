@@ -1,4 +1,6 @@
-package prodmngtsys;
+package prodmngtsys.database;
+
+import prodmngtsys.entity.Product;
 
 public class ProductDatabase {
 
@@ -11,14 +13,12 @@ public class ProductDatabase {
 	public int getCount() {
 		return count;
 	}
-	public boolean insertProduct(Product product)
+	// insert => insertion
+	public void insertProduct(Product product)
 	{
-		if(count < products.length)
-		{
-			products[count++] = product;
-			return true;
-		}
-		return false;
+		//inserts data in database
+		products[count++] = product;
+			
 	}
 	public Product[] getAllProducts()
 	{

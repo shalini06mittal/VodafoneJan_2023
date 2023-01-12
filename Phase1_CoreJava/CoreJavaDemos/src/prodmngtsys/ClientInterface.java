@@ -2,6 +2,10 @@ package prodmngtsys;
 
 import java.util.Scanner;
 
+import prodmngtsys.database.ProductDatabase;
+import prodmngtsys.entity.Product;
+import prodmngtsys.service.ProductService;
+
 public class ClientInterface {
 
 	public static void displayMenu()
@@ -16,16 +20,17 @@ public class ClientInterface {
 		System.out.println("6.Logout");
 	}
 	public static void main(String[] args) {
-		
+		/// highly cohesive
 		Scanner sc = new Scanner(System.in);
 		ProductDatabase database = new ProductDatabase(5);
-		while(true) {
+		ProductService service = new ProductService(database);
+		while(true) { // current context
 			displayMenu();
 			int choice = sc.nextInt();
 			switch(choice) {
 			case 1:
 				// iterate and display the list
-				
+
 				if(database.getCount() == 0)
 					System.out.println("No products added!!\n");
 				else {
@@ -47,23 +52,26 @@ public class ClientInterface {
 				database.updateProduct(product);
 				break;
 			case 3:
-				
-				System.out.println("\nEnter product details to add");
-				System.out.println("Enter id");
-				int id = sc.nextInt();
-				System.out.println("Enter name");
-				String name = sc.next();
-				sc.nextLine();
-				System.out.println("Enter desc");
-				String desc = sc.nextLine();
-				System.out.println("Enter price");
-				double price = sc.nextDouble();
-				Product p = new Product(id, name, desc, price);
-				
-				if(database.insertProduct(p))
-					System.out.println("Product added");
+
+				if(service.isStockFull())
+					System.out.println("Stock full");
 				else {
-					System.out.println("Product could not be added , stock full");
+					System.out.println("\nEnter product details to add");
+					System.out.println("Enter id");
+					int id = sc.nextInt();
+					System.out.println("Enter name");
+					String name = sc.next();
+					sc.nextLine();
+					System.out.println("Enter desc");
+					String desc = sc.nextLine();
+					System.out.println("Enter price");
+					double price = sc.nextDouble();
+					Product p = new Product(id, name, desc, price);
+					if(service.addProduct(p))
+						System.out.println("Product added");
+					else {
+						System.out.println("Product could not be added , stock full");
+					}
 				}
 				break;
 			case 4:// // ask for product id to delete
@@ -76,8 +84,9 @@ public class ClientInterface {
 				break;
 			case 6:
 				System.out.println();
+				// System.exit(0);
 				break;
-				
+
 			}
 			// if
 			//break;
