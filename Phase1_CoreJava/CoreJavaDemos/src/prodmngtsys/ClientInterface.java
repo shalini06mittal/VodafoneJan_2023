@@ -5,6 +5,7 @@ import java.util.Scanner;
 import prodmngtsys.database.ProductDatabase;
 import prodmngtsys.entity.Product;
 import prodmngtsys.service.ProductService;
+import staticdemo.Counter;
 
 public class ClientInterface {
 
@@ -18,9 +19,20 @@ public class ClientInterface {
 		System.out.println("4. Delete a Product");
 		System.out.println("5. Search for a product");
 		System.out.println("6.Logout");
+		Counter.setY(100);
 	}
 	public static void main(String[] args) {
 		/// highly cohesive
+		
+		Counter.setY(10);
+		System.out.println(Counter.company);
+		
+		Counter ob1 = new Counter();
+		System.out.println(ob1.ff);
+		
+		displayMenu();
+		System.out.println(Counter.getY());
+		
 		Scanner sc = new Scanner(System.in);
 		ProductDatabase database = new ProductDatabase(5);
 		ProductService service = new ProductService(database);

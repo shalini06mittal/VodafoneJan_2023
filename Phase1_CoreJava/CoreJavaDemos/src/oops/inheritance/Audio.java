@@ -17,6 +17,6 @@ public class Audio extends Item{
 	@Override
 	public void calculate() {
 		System.out.println("Audio price calculate");
-		
+		setPrice(1000);
 	}
 }

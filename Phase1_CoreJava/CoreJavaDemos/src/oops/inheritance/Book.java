@@ -49,6 +49,7 @@ public  class Book extends Item {
 	@Override
 	public void calculate() {
 		System.out.println("Book price calculate");
+		setPrice(1000);
 		
 	}
 	
