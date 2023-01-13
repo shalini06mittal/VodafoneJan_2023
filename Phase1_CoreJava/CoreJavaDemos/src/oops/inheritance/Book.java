@@ -1,7 +1,7 @@
 package oops.inheritance;
 // are of type Item
 // child or sub or derived
-public class Book extends Item {
+public  class Book extends Item {
 
 	private String title;
 	private String author;
@@ -34,6 +34,22 @@ public class Book extends Item {
 	}
 	public void setAuthor(String author) {
 		this.author = author;
+	}
+	@Override
+	public String toString() {
+		return "Book ["  + super.toString()+
+				", title=" + title +", author=" + author+ 
+				"]";
+	}
+	// Item => 10
+	// Televiiosn => 5
+	// Furnitture => 8
+	// Audio => 6
+	// Video
+	@Override
+	public void calculate() {
+		System.out.println("Book price calculate");
+		
 	}
 	
 	
