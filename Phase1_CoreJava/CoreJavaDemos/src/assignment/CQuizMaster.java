@@ -7,4 +7,10 @@ public class CQuizMaster implements QuizMaster {
 		return "Are you new to C Programming?";
 	}
 
+	@Override
+	public void addQuestion(String ques) {
+		// TODO Auto-generated method stub
+		
+	}
+
 }

@@ -15,8 +15,8 @@ public class QuizProgram {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		
-
+		QuizMaster master = new CQuizMaster();
+		master.popQuestion();
 	}
 
 }

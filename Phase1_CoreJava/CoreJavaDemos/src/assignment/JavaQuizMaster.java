@@ -7,4 +7,10 @@ public class JavaQuizMaster implements QuizMaster {
 		return "Are you new to Java?";
 	}
 
+	@Override
+	public void addQuestion(String ques) {
+		// TODO Auto-generated method stub
+		
+	}
+
 }

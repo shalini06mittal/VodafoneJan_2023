@@ -2,13 +2,11 @@ package assignment;
 
 public class QuizMasterService {
 
-	public QuizMasterService() {
-		super();
-		
-		System.out.println("bean Created");
+	public QuizMasterService(QuizMaster quizMaster) {
+		this.quizMaster = quizMaster;
 	}
-	
-	QuizMaster quizMaster;
+
+	private QuizMaster quizMaster;
 	
 	public void setQuizMaster(QuizMaster quizMaster) {
 		this.quizMaster = quizMaster;
@@ -18,5 +16,9 @@ public class QuizMasterService {
 	public void askQuestion()
 	{
 		System.out.println(quizMaster.popQuestion());
+	}
+	public void createQuestion(String s)
+	{
+		quizMaster.addQuestion(s);
 	}
 }
