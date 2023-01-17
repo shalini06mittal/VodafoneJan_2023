@@ -28,5 +28,10 @@ public class MapDemo {
 				System.out.println(key +" => "+value);
 			}
 		});
+		
+		/**
+		 * IT department => how many time every employee logged in the system
+		 *
+		 */
 	}
 }
