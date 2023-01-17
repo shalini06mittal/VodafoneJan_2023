@@ -38,7 +38,7 @@ public class AnonymousInterface {
 		for(Integer n : nos)
 			c.calculate(n);
 		
-		// square root of the numbers, below class has no name
+		// square root of the numbers, below class has no name means anonymous inner class
 		// not known is the class name
 		// what is known the name of the interface
 		System.out.println();

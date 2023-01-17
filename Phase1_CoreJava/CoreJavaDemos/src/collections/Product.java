@@ -1,5 +1,7 @@
 package collections;
 
+import java.util.Objects;
+
 public class Product {
 
 	private int pid;
@@ -26,6 +28,28 @@ public class Product {
 		this.desc = desc;
 		this.price = price;
 		this.brand = brand;
+	}
+
+	
+	@Override
+	public int hashCode() {
+		System.out.println("Hashcode");
+		return Objects.hash(brand, desc, pid, pname, price);
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		System.out.println("equals");
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Product other = (Product) obj;
+		return Objects.equals(brand, other.brand) && Objects.equals(desc, other.desc) && pid == other.pid
+				&& Objects.equals(pname, other.pname)
+				&& Double.doubleToLongBits(price) == Double.doubleToLongBits(other.price);
 	}
 
 	public int getPid() {

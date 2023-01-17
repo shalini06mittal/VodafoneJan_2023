@@ -13,9 +13,16 @@ import java.util.Set;
  * or scattered memory
  * 
  * Collection is an interface
- * List 
- * Set
- * Map
+ * List -> anywhere and everywhere => cart, display transaction history, invoices, bills wishlist...
+ * Set -> 
+ * Bank => list of customers
+ * A1 -> c1, A2 c2, A3 c1,A4 c4, A5 c2
+ * names of cities from where my account holders are
+ * C1
+ * 
+ * Map => key => cityname  and value => count
+ * key => custemail and value => nooftransations
+ * 
  * Queue
  * 
  *
