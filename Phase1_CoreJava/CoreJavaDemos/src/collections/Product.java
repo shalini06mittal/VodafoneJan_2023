@@ -6,7 +6,7 @@ public class Product {
 	private String pname;
 	private String desc;
 	private double price;
-	private double brand;
+	private String brand;
 	
 	public Product() {
 		// TODO Auto-generated constructor stub
@@ -19,7 +19,7 @@ public class Product {
 		this.price = price;
 	}
 
-	public Product(int pid, String pname, String desc, double price, double brand) {
+	public Product(int pid, String pname, String desc, double price, String brand) {
 		super();
 		this.pid = pid;
 		this.pname = pname;
@@ -60,11 +60,11 @@ public class Product {
 		this.price = price;
 	}
 
-	public double getBrand() {
+	public String getBrand() {
 		return brand;
 	}
 
-	public void setBrand(double brand) {
+	public void setBrand(String brand) {
 		this.brand = brand;
 	}
 
