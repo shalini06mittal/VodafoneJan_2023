@@ -2,8 +2,11 @@ package prodmngtsys;
 
 import java.util.Scanner;
 
+import javax.management.NotCompliantMBeanException;
+
 import prodmngtsys.database.ProductDatabase;
 import prodmngtsys.entity.Product;
+import prodmngtsys.exception.StockFullException;
 import prodmngtsys.service.ProductService;
 import staticdemo.Counter;
 
@@ -79,10 +82,15 @@ public class ClientInterface {
 					System.out.println("Enter price");
 					double price = sc.nextDouble();
 					Product p = new Product(id, name, desc, price);
-					if(service.addProduct(p))
-						System.out.println("Product added");
-					else {
-						System.out.println("Product could not be added , stock full");
+					try {
+						if(service.addProduct(p))
+							System.out.println("Product added");
+						else {
+							System.out.println("Product could not be added , stock full");
+						}
+					} catch (NotCompliantMBeanException | StockFullException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
 					}
 				}
 				break;
