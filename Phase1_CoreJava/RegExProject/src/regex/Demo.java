@@ -10,6 +10,7 @@ import java.util.regex.Pattern;
  */
 public class Demo {
 
+	int b[];
 	public static void main(String[] args) {
 		
 		// regex package
@@ -47,9 +48,12 @@ public class Demo {
 		matcher = pattern.matcher("+91-1234567899");
 		System.out.println(matcher.matches());
 		
-		pattern = Pattern.compile("\\+\\d{2}-\\d{10}");
-		matcher = pattern.matcher("+91-234567899");
+		pattern = Pattern.compile("^\\+\\d{2}-\\d{10}");
+		matcher = pattern.matcher("+91-1234567899");
 		System.out.println(matcher.matches());
+		
+	
+		
 
 	}
 
