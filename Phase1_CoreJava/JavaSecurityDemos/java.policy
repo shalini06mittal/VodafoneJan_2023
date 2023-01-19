@@ -1,0 +1,8 @@
+grant {
+   permission java.lang.RuntimePermission "setSecurityManager";
+   permission java.lang.RuntimePermission "createSecurityManager";
+   permission java.lang.RuntimePermission "usePolicy";
+   permission java.util.PropertyPermission "java.home", "read";
+   permission java.net.SocketPermission "www.google.com:80", "connect, resolve";
+
+};
