@@ -38,8 +38,7 @@ public class DecryptionExample implements Constants {
         for (int i = 0; i < decrypted.length; i++) {
         	System.out.println(decrypted[i]+ " : "+DATA[i]);
         	System.out.println((char)decrypted[i]+ " : "+(char)DATA[i]);
-            if ( decrypted[ i ] != DATA[ i ] ) {
-            	
+            if ( decrypted[ i ] != DATA[ i ] ) {    	
                 System.err.println( "Decrypted data wrong at byte " + i + "!" );
                 System.exit( 1 );
             }

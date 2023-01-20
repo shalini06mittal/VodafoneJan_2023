@@ -18,7 +18,9 @@ public class DatabaseUtil {
        var url = "jdbc:h2:mem:";
        try {
            connection = DriverManager.getConnection(url);
-       }catch(SQLException e){
+           loadFile("sql/schema.sql");
+           loadFile("sql/data.sql");
+       }catch(SQLException | FileNotFoundException e){
             System.out.println("Error creating connection: " + e.getMessage());
             throw new RuntimeException("database creation error");
        }

@@ -43,7 +43,7 @@ public class PresidentDAO {
         String middleInitial = resultSet.getString("MIDDLE_INITIAL");
         String lastName = resultSet.getString("LAST_NAME");
         String emailAddress = resultSet.getString("EMAIL_ADDRESS");
-        President president =  new President(id, firstName, middleInitial, lastName, emailAddress);
+        President president =  new President(id, firstName, middleInitial, lastName,ObfuscationUtil.obfuscateData(emailAddress));
         LOGGER.info("Resolving president: {}", president);
         return president;
     }
