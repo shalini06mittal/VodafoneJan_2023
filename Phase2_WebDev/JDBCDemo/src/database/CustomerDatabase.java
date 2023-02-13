@@ -37,6 +37,22 @@ public class CustomerDatabase {
 		}
 		return customers;
 	}
+	// fetch all records -> select *
+	public void getAllCities() throws SQLException
+	{
+
+		String sql = "select city from customer";
+
+		// 1. DB connection 
+		Connection conn = DBConnection.dbConn();
+		//2. create the statememt
+		Statement stat = conn.createStatement();
+		// 3. execute the query
+		ResultSet rs = stat.executeQuery(sql);
+		while(rs.next()) {
+			System.out.println(rs.getString(1));
+		}
+	}
 	public boolean insertCustomer(Customer customer) throws SQLException
 	{
 		String sql = "insert into customer values('" + customer.getEmail()+
@@ -48,7 +64,7 @@ public class CustomerDatabase {
 		//2. create the statememt
 		Statement stat = conn.createStatement();
 		try {
-		stat.executeUpdate(sql);
+			stat.executeUpdate(sql);
 		}catch(Exception e)
 		{
 			System.out.println("error "+e.getMessage());
