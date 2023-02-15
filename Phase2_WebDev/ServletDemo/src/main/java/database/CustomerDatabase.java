@@ -74,6 +74,7 @@ public class CustomerDatabase {
 		}catch(Exception e)
 		{
 			System.out.println("error "+e.getMessage());
+			
 			return false;
 		}
 		return true;
