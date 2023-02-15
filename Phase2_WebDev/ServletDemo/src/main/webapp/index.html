@@ -9,6 +9,25 @@
 </head>
 <body>
 	<h1>Servlets Demo</h1>
-	<a href="home">Home Servlet</a>
+	<!-- http://localhost:8080/ServletDemo/home?name=
+	query parameters
+	 -->
+	<a href="home?name=shalini">Home Servlet</a>
+	
+	<h2>GET DEMO</h2>
+	<form action="home" method="get">
+		<input type="text" placeholder="Enter first name" name="fname"/><br/><br/>
+		<input type="text" placeholder="Enter last name" name="lname"/><br/><br/>
+		<input type="password" placeholder="Enter passowrd" name="password"/><br/><br/>
+		<input type="submit"/><br/>
+	</form>
+	
+	<h2>POST DEMO</h2>
+	<form action="home" method="post">
+		<input type="text" placeholder="Enter first name" name="fname"/><br/><br/>
+		<input type="text" placeholder="Enter last name" name="lname"/><br/><br/>
+		<input type="password" placeholder="Enter passowrd" name="password"/><br/><br/>
+		<input type="submit"/><br/>
+	</form>
 </body>
 </html>

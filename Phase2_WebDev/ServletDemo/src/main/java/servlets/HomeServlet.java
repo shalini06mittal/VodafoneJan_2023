@@ -1,6 +1,8 @@
 package servlets;
 
 import java.io.IOException;
+import java.io.PrintWriter;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -22,13 +24,26 @@ public class HomeServlet extends HttpServlet {
         // TODO Auto-generated constructor stub
     }
 
+    // html embedded inside java
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		System.out.println("GET");
-		response.getWriter().append("Served from GET: ").append(request.getContextPath());
+		System.out.println("Req method "+ request.getMethod());
+		//http://localhost:8080/ServletDemo/home?name=shalini
+		// access query parameters
+		String name = request.getParameter("name");
+		String fname = request.getParameter("fname");
+		String lname = request.getParameter("lname");
+		String password = request.getParameter("password");
+		PrintWriter out = response.getWriter();
+		out.println("<h1>Welcome Guest FROM GET</h1>");
+		out.println("<p>Hey !!! "+name+"</p>");
+		out.println("<p>Hey !!! "+fname+"</p>");
+		out.println("<p>Hey !!! "+lname+"</p>");
+		out.println("<p>Hey !!! "+password+"</p>");
 	}
 
 	/**
@@ -37,7 +52,15 @@ public class HomeServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		System.out.println("POST");
-		doGet(request, response);
+		String fname = request.getParameter("fname");
+		String lname = request.getParameter("lname");
+		String password = request.getParameter("password");
+		PrintWriter out = response.getWriter();
+		out.println("<h1>Welcome Guest FROM POST</h1>");
+		
+		out.println("<p>Hey !!! "+fname+"</p>");
+		out.println("<p>Hey !!! "+lname+"</p>");
+		out.println("<p>Hey !!! "+password+"</p>");
 	}
 
 }
