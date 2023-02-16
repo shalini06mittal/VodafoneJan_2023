@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.SQLException;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -41,6 +42,8 @@ public class LoginServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String email = request.getParameter("email");
 		String password = request.getParameter("password");
+		PrintWriter out = response.getWriter();
+		response.setContentType("text/html");
 		if(email!=null && email.equals("admin") 
 				&& password!=null && password.equals("admin") )
 		{
@@ -50,14 +53,27 @@ public class LoginServlet extends HttpServlet {
 		CustomerDatabase db = new CustomerDatabase();
 		try {
 			if(db.validateCustomer(email, password)) {
-				response.sendRedirect("dashboard");
+				request.setAttribute("email", email);
+				// url rewriting
+				response.sendRedirect("dashboard?email="+email);
+				// if request is dispatched from post it invokes doPost of another servlet
+//				RequestDispatcher dispatcher = request.getRequestDispatcher("dashboard");
+//				request.setAttribute("email", email);
+//				dispatcher.forward(request, response);
 			}
-			else 
+			else {
 				response.sendRedirect("login.html");
-		} catch (SQLException | IOException e) {
+//				RequestDispatcher dispatcher = request.getRequestDispatcher("login.html");
+//				out.println("invalied credentials");
+//				dispatcher.include(request, response);
+			}
+		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
+			response.sendRedirect("login.html");
+//			RequestDispatcher dispatcher = request.getRequestDispatcher("login.html");
+//			out.println("Something went wrong, please contact the admin");
+//			dispatcher.include(request, response);
 		}
 	}
-
 }

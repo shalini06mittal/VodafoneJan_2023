@@ -34,6 +34,7 @@ public class AdminServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// display list of all the customers registered?
+		System.out.println(getServletContext().getContextPath() );
 		PrintWriter out = response.getWriter();
 		CustomerDatabase db = new CustomerDatabase();
 		try {
@@ -75,7 +76,7 @@ public class AdminServlet extends HttpServlet {
 							else
 								out.println("<td>No</td>");
 							out.println("<td><a href='edit'>Edit</a></td>");
-							out.println("<td><a href='delete?email="+customer.getEmail()+ "'>Delete</a></td>");
+							out.println("<td><a href='"+ getServletContext().getContextPath() +"/delete?email="+customer.getEmail()+ "'>Delete</a></td>");
 //							out.println("<td><a href='delete'>Delete</a></td>");
 							out.println("</tr>");
 				}
