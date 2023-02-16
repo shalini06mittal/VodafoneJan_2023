@@ -11,16 +11,16 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 /**
- * Servlet implementation class DashboardServlet
+ * Servlet implementation class ProfileServlet
  */
-@WebServlet("/dashboard")
-public class DashboardServlet extends HttpServlet {
+@WebServlet("/bills")
+public class BillsServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public DashboardServlet() {
+    public BillsServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -29,7 +29,6 @@ public class DashboardServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		//String email = (String) request.getAttribute("email");
 //		String email = (String) request.getParameter("email");
 		response.setHeader("Cache-Control", "no-cache,no-store,must-revalidate");
 		response.setHeader("Pragma", "no-cache");//http1.0
@@ -37,26 +36,17 @@ public class DashboardServlet extends HttpServlet {
 		
 		HttpSession session = request.getSession();
 		String email = (String) session.getAttribute("id");
-		
-		if(email != null) {
+		if(email!=null) {
 			PrintWriter out = response.getWriter();
-			out.println("<h1>GET request</h1>");
+			out.println("<h1>See your bills</h1>");
 			out.println("<p>Welcome "+email+" </p>");
+			out.println("<p><a href='dashboard'>Dashboard</a></p>");
 			out.println("<p><a href='profile'>Profile</a></p>");
-			out.println("<p><a href='bills'>Bills</a></p>");
 			out.println("<p><a href='logout'>Logout</a></p>");
 		}
-		else response.sendRedirect("login.html");
+		else
+			 response.sendRedirect("login.html");
 	}
 
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
-//	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-//		String email = (String) request.getAttribute("email");
-//		PrintWriter out = response.getWriter();
-//		out.println("<h1>POST request</h1>");
-//		out.println("<p>Welcome "+email+" </p>");
-//	}
-
+	
 }

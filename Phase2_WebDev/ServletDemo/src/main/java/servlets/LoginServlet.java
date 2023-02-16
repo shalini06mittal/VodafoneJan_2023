@@ -10,6 +10,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import database.CustomerDatabase;
 
@@ -32,14 +33,17 @@ public class LoginServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		PrintWriter out = response.getWriter();
-		out.println("<h1>Login GET</h1>");
+		response.sendRedirect("login.html");
 	}
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		response.setHeader("Cache-Control", "no-cache,no-store,must-revalidate");
+		response.setHeader("Pragma", "no-cache");//http1.0
+		response.setHeader("Pragma", "0");//proxies
+		
 		String email = request.getParameter("email");
 		String password = request.getParameter("password");
 		PrintWriter out = response.getWriter();
@@ -47,6 +51,8 @@ public class LoginServlet extends HttpServlet {
 		if(email!=null && email.equals("admin") 
 				&& password!=null && password.equals("admin") )
 		{
+			HttpSession session = request.getSession();
+			session.setAttribute("id", email);
 			response.sendRedirect("admin");
 			return;
 		}
@@ -55,7 +61,9 @@ public class LoginServlet extends HttpServlet {
 			if(db.validateCustomer(email, password)) {
 				request.setAttribute("email", email);
 				// url rewriting
-				response.sendRedirect("dashboard?email="+email);
+				HttpSession session = request.getSession();
+				session.setAttribute("id", email);
+				response.sendRedirect("dashboard");
 				// if request is dispatched from post it invokes doPost of another servlet
 //				RequestDispatcher dispatcher = request.getRequestDispatcher("dashboard");
 //				request.setAttribute("email", email);
