@@ -33,7 +33,7 @@ public class LogoutServlet extends HttpServlet {
 		String email = (String) session.getAttribute("id");
 		if(email == null) response.sendRedirect("login.html");
 		else {
-			session.removeAttribute("id");
+			//session.removeAttribute("id");
 			session.invalidate();
 			Cookie cookies[] = request.getCookies();
 			for(Cookie cookie:cookies)

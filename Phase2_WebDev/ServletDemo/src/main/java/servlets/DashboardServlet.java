@@ -2,6 +2,7 @@ package servlets;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.ArrayList;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -36,7 +37,11 @@ public class DashboardServlet extends HttpServlet {
 		
 		HttpSession session = request.getSession();
 		String email = (String) session.getAttribute("id");
-		
+		ArrayList<String> fruits = new ArrayList<String>();
+		fruits.add("Apple");
+		fruits.add("Mangoes");
+		fruits.add("Banana");
+		session.setAttribute("fruits", fruits);
 		if(email != null) {
 			PrintWriter out = response.getWriter();
 			out.println("<h1>GET request</h1>");
