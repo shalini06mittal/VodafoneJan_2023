@@ -21,14 +21,13 @@ public class DashboardServlet extends HttpServlet {
      * @see HttpServlet#HttpServlet()
      */
     public DashboardServlet() {
-        super();
-        // TODO Auto-generated constructor stub
+    	System.out.println("Dashboard Servlet");
     }
-
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		System.out.println("Dashboard DO GET");
 		//String email = (String) request.getAttribute("email");
 //		String email = (String) request.getParameter("email");
 		response.setHeader("Cache-Control", "no-cache,no-store,must-revalidate");

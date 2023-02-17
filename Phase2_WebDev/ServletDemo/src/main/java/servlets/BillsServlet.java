@@ -21,8 +21,7 @@ public class BillsServlet extends HttpServlet {
      * @see HttpServlet#HttpServlet()
      */
     public BillsServlet() {
-        super();
-        // TODO Auto-generated constructor stub
+    	System.out.println("Bills Servlet");
     }
 
 	/**

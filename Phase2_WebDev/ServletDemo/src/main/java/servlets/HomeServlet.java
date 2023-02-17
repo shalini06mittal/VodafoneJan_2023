@@ -20,8 +20,7 @@ public class HomeServlet extends HttpServlet {
      * @see HttpServlet#HttpServlet()
      */
     public HomeServlet() {
-        super();
-        // TODO Auto-generated constructor stub
+        System.out.println("Home Servlet");
     }
 
     // html embedded inside java

@@ -25,8 +25,7 @@ public class AdminServlet extends HttpServlet {
      * @see HttpServlet#HttpServlet()
      */
     public AdminServlet() {
-        super();
-        // TODO Auto-generated constructor stub
+    	System.out.println("Admin Servlet");
     }
 
 	/**

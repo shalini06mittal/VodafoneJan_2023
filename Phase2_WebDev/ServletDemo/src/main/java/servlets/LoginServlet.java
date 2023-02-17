@@ -25,8 +25,7 @@ public class LoginServlet extends HttpServlet {
      * @see HttpServlet#HttpServlet()
      */
     public LoginServlet() {
-        super();
-        // TODO Auto-generated constructor stub
+    	System.out.println("Login Servlet");
     }
 
 	/**
@@ -64,6 +63,7 @@ public class LoginServlet extends HttpServlet {
 				HttpSession session = request.getSession();
 				session.setAttribute("id", email);
 				response.sendRedirect("dashboard");
+				//response.sendRedirect("dashboard?email="+email);
 				// if request is dispatched from post it invokes doPost of another servlet
 //				RequestDispatcher dispatcher = request.getRequestDispatcher("dashboard");
 //				request.setAttribute("email", email);

@@ -25,14 +25,14 @@ public class ProfileServlet extends HttpServlet {
      * @see HttpServlet#HttpServlet()
      */
     public ProfileServlet() {
-        super();
-        // TODO Auto-generated constructor stub
+    	System.out.println("Profile Servlet");
     }
 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		System.out.println("Profile DO GET");
 		response.setHeader("Cache-Control", "no-cache,no-store,must-revalidate");
 		response.setHeader("Pragma", "no-cache");//http1.0
 		response.setHeader("Pragma", "0");//proxies
