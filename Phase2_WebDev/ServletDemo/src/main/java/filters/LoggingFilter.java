@@ -20,7 +20,7 @@ import javax.servlet.http.HttpSession;
 @WebFilter( urlPatterns = {"/dashboard","/profile"})
 public class LoggingFilter extends HttpFilter implements Filter {
        
-    /**
+    /**C
      * @see HttpFilter#HttpFilter()
      */
     public LoggingFilter() {

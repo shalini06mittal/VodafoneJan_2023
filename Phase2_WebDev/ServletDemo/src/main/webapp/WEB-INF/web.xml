@@ -10,4 +10,8 @@
     <welcome-file>default.htm</welcome-file>
   </welcome-file-list>
  
+ <context-param>
+ 	<param-name>adminname</param-name>
+ 	<param-value>Shalini Mittal</param-value>
+ </context-param>
 </web-app>
