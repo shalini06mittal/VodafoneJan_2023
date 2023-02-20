@@ -1,6 +1,3 @@
-<%-- JSP Page Directive --%>
-<%@page import="java.time.LocalDateTime"%>
-<%@page import="java.util.Date"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -13,28 +10,18 @@
 	rel="stylesheet"
 	integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
 	crossorigin="anonymous">
-<link
-	href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
-	rel="stylesheet"
-	integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
-	crossorigin="anonymous">
 <script
 	src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
 	integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
 	crossorigin="anonymous"></script>
-<style>
-p {
-	color: white;
-	background-color: black;
-	padding: 10px;
-}
-</style>
-
+	<style>
+	.error{
+		color:red;
+	}
+	</style>
 </head>
 <body>
-	<!--  Java inside HTML 
 
- -->
 	<nav class="navbar navbar-expand-lg navbar-light bg-light">
 		<div class="container-fluid">
 			<a class="navbar-brand" href="#">CMS</a>
@@ -70,24 +57,31 @@ p {
 			</div>
 		</div>
 	</nav>
-	<h1>Hello From JSP Demo</h1>
-	<%
-	// scriplets => inside a jspService()
-	out.println("<h2>Hey!!!</h2>");
-	out.println("<p>" + new Date() + "</p>");
-	String name = request.getParameter("username");
-	if (name == null)
-		out.println("<p>Welcome GUEST</p>");
-	else
-		out.println("<p>Welcome " + name.toUpperCase() + "</p>");
-	for (int i = 1; i <= 10; i++) {
-		out.println("<p>" + i + " : " + i * i + "</p>");
-	}
-	%>
-	<%-- JSP Expressions
-do not put ; at the end. it can converts everything strings
- --%>
-	<h2><%=LocalDateTime.now()%></h2>
-	<h2><%=Math.sqrt(25)%></h2>
+	
+	<div class="container">
+		<div>
+			<div class="wrapper fadeInDown">
+				<div id="formContent">
+					<div class="fadeIn first">
+						<h2 class='sign'>Sign In</h2>
+					</div>
+					<form action="login" method="POST">
+						<input type="text" id="login" class="fadeIn second" name="email"
+							placeholder="Email" value="sh@g.c" /> <input type="password"
+							value="sh" id="password" class="fadeIn third" name="password"
+							placeholder="Password" /> <input type="submit"
+							class="fadeIn fourth" value="Log In" />
+					</form>
+					<%
+						String error = request.getParameter("error");
+					if(error !=  null){
+					%>
+					<div class="error"><%= error %></div>
+					<%} %>
+				</div>
+			</div>
+		</div>
+	</div>
+
 </body>
 </html>
