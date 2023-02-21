@@ -17,7 +17,7 @@ import javax.servlet.http.HttpSession;
 /**
  * Servlet Filter implementation class AuthenticateFilter
  */
-@WebFilter( urlPatterns = {"/dashboard","/profile"})
+@WebFilter( filterName = "auth", urlPatterns = {"/dashboard","/profile"})
 public class AuthenticateFilter extends HttpFilter implements Filter {
        
     /**
@@ -34,13 +34,14 @@ public class AuthenticateFilter extends HttpFilter implements Filter {
 		System.out.println("destroy");
 	}
 
+	// doFilter is called when request comes to "/dashboard","/profile"
 	/**
 	 * @see Filter#doFilter(ServletRequest, ServletResponse, FilterChain)
 	 */
 	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
 		// TODO Auto-generated method stub
 		// place your code here
-		System.out.println("do filter before");
+		System.out.println("do filter before AUTH");
 		HttpServletRequest req = (HttpServletRequest) request;
 		HttpServletResponse resp = (HttpServletResponse) response;
 		HttpSession session = req.getSession();
@@ -54,7 +55,7 @@ public class AuthenticateFilter extends HttpFilter implements Filter {
 		
 		// pass the request along the filter chain
 		chain.doFilter(request, response);
-		System.out.println("do filter after");
+		System.out.println("do filter after AUTH");
 		Cookie cookie = new Cookie("data", "somedata");
 		resp.addCookie(cookie);
 	}
