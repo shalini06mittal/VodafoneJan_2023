@@ -18,7 +18,14 @@
 </head>
 <body>
 
+<!--  it includes the content at the compile time itself
+	static inclusion
+ -->
 	<%@ include file="header.jsp"%>
+	
+	<!--  dynamic inclusion -->
+	<jsp:include page="header.jsp"></jsp:include>
+	
 	<h1>JSP Demos</h1>
 	<%--
 	3 types of directives 
@@ -27,7 +34,7 @@
 	3. taglib directive
 	
 	${name } => JSP expression language
- --%>
+ 	--%>
 
 	<c:set var="name" value="Shalini Mittal"></c:set>
 	<c:out value="${name }"></c:out>
