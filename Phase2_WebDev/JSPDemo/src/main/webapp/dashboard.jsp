@@ -39,8 +39,26 @@
 			</div>
 		</div>
 	</nav>
+<div class="container">	
+	<h1>Customer Dashboard</h1>
 	
-	<h1>Dashboard</h1>
-
+	<div class="row" style="margin-top:20px;">
+		<div class="col-md-3">
+			<ul  class="list-group">
+				<li  class="list-group-item"><a href="profile">Profile</a></li>
+				<li class="list-group-item"><a href="invoices">Invoices</a></li>
+				
+			</ul>
+		</div>
+		<div class="col-md-2"></div>
+		<div class="col-md-7">
+			<h2>Welcome ${sessionScope.id }</h2>
+			<p>Click on the links to view your invoices or update profile</p>
+			<p>
+				Do shop as we have more offers !!
+			</p>
+		</div>
+	</div>
+	</div>
 </body>
 </html>

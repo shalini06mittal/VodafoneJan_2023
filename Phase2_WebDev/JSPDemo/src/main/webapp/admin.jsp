@@ -2,6 +2,7 @@
 <%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+	<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -19,9 +20,9 @@
 </head>
 <body>
 	<h1>Welcome ADMIN</h1>
-	<%
+	<%-- <%
 		List<Customer> customers = (List<Customer>)request.getAttribute("customers");
-	%>
+	%> --%>
 	<div class="container">
 	<table class="table">
 		<tr>
@@ -32,28 +33,21 @@
 			<th>Edit</th>
 			<th>Delete</th>
 		</tr>
-		<%
-			for(Customer customer : customers)
-			{
-		%>
+		<c:forEach var="customer" items="${requestScope.customers }">
 			<tr>
-				<td><% out.println(customer.getEmail()); %></td>
-				<td><%= customer.getPhone() %></td>
-				<td><%= customer.getCity() %></td>
-				<td><%= customer.getEmail() %></td>
-				<%
-					if(customer.isIsmember())
-						out.println("<td>YES</td>");
-					else
-						out.println("<td>NO</td>");
-				
-				%>
-				<td><a href="edit?email=<%=customer.getEmail()%>">Edit</a> </td>
-				<td><a href="delete?email=<%=customer.getEmail()%>">Del</a> </td>
+				<td>${ customer.email}</td>
+				<td>${ customer.phone}</td>
+				<td>${ customer.city}</td>
+				<c:if test="${customer.ismember }">
+					<td>YES</td>
+				</c:if>
+				<c:if test="${!customer.ismember }">
+					<td>NO</td>
+				</c:if>
+				<td><a href="edit?email=${ customer.email}">Edit</a> </td>
+				<td><a href="delete?email=${ customer.email}">Del</a> </td>
 			</tr>
-		<%
-			}
-		%>
+		</c:forEach>
 
 	</table>
 	</div>

@@ -21,5 +21,6 @@
 	<jsp:setProperty property="*" name="b1"/>
 	<jsp:setProperty property="title" param="booktitle" name="b1"/>
 	<%= b1 %>
+	${b1.title }
 </body>
 </html>
