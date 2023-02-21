@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+  <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -79,11 +80,12 @@
 							class="form-control" id="city" placeholder="Enter city"
 							name="city"  value=${requestScope.customer.city }>
 					</div>
-
-
 					<div class="form-group">
 						<label for="ismember">Is Member:</label> <input type="checkbox"
-							id="ismember" name="ismember" checked=${requestScope.customer.ismember }>
+							id="ismember" name="ismember"
+						<c:if test="${ requestScope.customer.ismember}">checked</c:if>
+							 />
+							 
 					</div>
 
 					<div align="center">
