@@ -71,9 +71,18 @@ p {
 		</div>
 	</nav>
 	<h1>Hello From JSP Demo</h1>
+	<%!
+	
+		String desc="hey there";
+		public String m1()
+		{
+			int x = 10;
+			return desc.toLowerCase();
+		}
+	%>
 	<%
 	// scriplets => inside a jspService()
-	out.println("<h2>Hey!!!</h2>");
+	out.println("<h2>Hey!!!</h2>" + desc+ m1());
 	out.println("<p>" + new Date() + "</p>");
 	String name = request.getParameter("username");
 	if (name == null)
