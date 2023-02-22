@@ -8,10 +8,14 @@
 		<property name="hibernate.connection.url">jdbc:mysql://localhost:8889/voda2023</property>
 		<property name="hibernate.connection.username">root</property>
 		<property name="hibernate.connection.password">root</property>
-		<property name="dialect">org.hibernate.dialect.MySQLDialect</property>
+		<property name="dialect">org.hibernate.dialect.MySQL8Dialect</property>
 		<property name="show_sql">true</property>
+		<!-- create will drop the table if it exists and recreate
+			update will check if table exists will not recreate
+		 -->
 		<property name="hibernate.hbm2ddl.auto">update</property>
 		<property name="hibernate.current_session_context_class">thread</property>
-		 
+		 <mapping resource="book.hbm.xml"></mapping>
+		 <mapping class="com.bean.Author"></mapping>
 	</session-factory>
 </hibernate-configuration>
