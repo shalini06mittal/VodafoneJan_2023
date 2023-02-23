@@ -9,6 +9,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
@@ -27,15 +28,9 @@ public class Question {
 	private List<String> answers;
 	
 	@OneToMany
-	@JoinColumn(name="userid")
+	@JoinColumn(name="qid")
 	private List<User> users;
 	
-	public List<User> getUsers() {
-		return users;
-	}
-	public void setUsers(List<User> users) {
-		this.users = users;
-	}
 	public int getQid() {
 		return qid;
 	}
@@ -53,6 +48,12 @@ public class Question {
 	}
 	public void setAnswers(List<String> answers) {
 		this.answers = answers;
+	}
+	public List<User> getUsers() {
+		return users;
+	}
+	public void setUsers(List<User> users) {
+		this.users = users;
 	}
 	
 	

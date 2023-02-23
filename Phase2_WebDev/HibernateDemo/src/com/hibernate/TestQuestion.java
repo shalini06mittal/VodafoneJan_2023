@@ -28,6 +28,9 @@ public class TestQuestion {
 		Session session = factory.openSession();
 
 		List<String> answers = Arrays.asList(
+				"Java is OOPS language");
+		
+		List<String> answers1 = Arrays.asList(
 				"HTML is browser's language",
 				"HTML is hyper text markup language",
 				"HTML is used to display content");
@@ -35,27 +38,34 @@ public class TestQuestion {
 		List<User> users = new ArrayList<User>();
 		User user1 = new User();
 		user1.setUsername("Shalini");
-		user1.setUserid(5);
+		user1.setUserid(1);
 		users.add(user1);
 
 		User user2 = new User();
 		user2.setUsername("Charles");
-		user2.setUserid(6);
+		user2.setUserid(2);
 		users.add(user2);
 		
 		Question q1 = new Question();
 		q1.setQname("What is HTML?");
-		q1.setAnswers(answers);
+		q1.setAnswers(answers1);
 		q1.setUsers(users);
 		
-		session = factory.openSession();
+		Question q2 = new Question();
+		q2.setQname("What is Java?");
+		q2.setAnswers(answers);
 		
-		Transaction tx = session.beginTransaction();
-		//session.save(user1);
-		//session.save(user2);
-		session.save(q1);
-		tx.commit();
-		session.close();
+		
+//		session = factory.openSession();
+//		
+//		Transaction tx = session.beginTransaction();
+//		session.save(user1);
+//		session.save(user2);
+//		session.save(q1);
+//		
+//		//session.save(q1);
+//		tx.commit();
+//		session.close();
 
 	}
 

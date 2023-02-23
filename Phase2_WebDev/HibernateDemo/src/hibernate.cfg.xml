@@ -13,15 +13,17 @@
 		<!-- create will drop the table if it exists and recreate
 			update will check if table exists will not recreate
 		 -->
-		<!-- <property name="hibernate.hbm2ddl.auto">create</property> -->
+		<property name="hibernate.hbm2ddl.auto">update</property>
 		<property name="hibernate.current_session_context_class">thread</property>
 		 <!-- <mapping resource="book.hbm.xml"></mapping>
 		 <mapping class="com.bean.Author"></mapping> -->
 		<!--  <mapping class="com.bean.Employee"></mapping>
 		 <mapping class="com.bean.UniqueIdentification"></mapping>
 		  <mapping class="com.bean.Supplier"></mapping> -->
-		  <mapping class="com.bean.Question"></mapping>
-		  <mapping class="com.bean.User"></mapping>
+		  <!-- <mapping class="com.bean.Question"></mapping>
+		  <mapping class="com.bean.User"></mapping> -->
+		   <mapping class="com.bean.Product"></mapping>
+		    <mapping class="com.bean.Store"></mapping>
 		 <!-- <mapping class="com.bean.Email"></mapping> -->
 	</session-factory>
 </hibernate-configuration>
