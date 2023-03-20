@@ -1,4 +1,4 @@
-package com.spring.core;
+package com.spring.core.entity;
 
 public class Author {
 
