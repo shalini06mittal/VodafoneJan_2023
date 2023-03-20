@@ -13,6 +13,7 @@ public class Singer {
 	private String name;
 	
 	@Autowired
+	@Qualifier("violin")
 	private Instrument instrument;
 	
 	public Singer() {
