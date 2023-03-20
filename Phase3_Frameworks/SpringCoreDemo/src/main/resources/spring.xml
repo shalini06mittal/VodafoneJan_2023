@@ -6,5 +6,13 @@
         http://www.springframework.org/schema/beans 
         http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-	<bean class="com.spring.core.entity.Author"></bean>
+	<bean class="com.spring.core.entity.Author">
+		<!-- <constructor-arg name="aid" value="1"></constructor-arg>
+		<constructor-arg name="aname" value="Sumita Arora"></constructor-arg>
+		<constructor-arg name="genre" value="IT"></constructor-arg> -->
+		
+		<property name="aid" value="101"></property>
+		<property name="aname" value="Shalin Mittal"></property>
+		<property name="genre" value="Suspense"></property>
+	</bean>
 </beans>
