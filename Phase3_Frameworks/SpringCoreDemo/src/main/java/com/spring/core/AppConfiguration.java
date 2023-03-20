@@ -4,6 +4,8 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+
+import com.spring.core.band.Singer;
 import com.spring.core.entity.Book;
 
 import bean.Employee;
@@ -26,6 +28,9 @@ public class AppConfiguration
         
         Employee emp = context.getBean(Employee.class);
         System.out.println(emp);
+        
+        Singer singer = context.getBean(Singer.class);
+       singer.singing();
 
     }
 }
