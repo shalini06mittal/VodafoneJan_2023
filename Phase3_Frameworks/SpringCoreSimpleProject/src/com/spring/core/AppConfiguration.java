@@ -29,6 +29,8 @@ public class AppConfiguration
         
         Singer singer = context.getBean(Singer.class);
        singer.singing();
+       
+
 
     }
 }

@@ -7,6 +7,7 @@ import org.springframework.context.annotation.Configuration;
 
 import com.spring.core.band.Singer;
 import com.spring.core.entity.Book;
+import com.spring.core.events.OrdersPublisher;
 
 import bean.Employee;
 
@@ -23,14 +24,17 @@ public class AppConfiguration
         ApplicationContext context =
         		new AnnotationConfigApplicationContext(AppConfiguration.class);
         
-        Book book = context.getBean(Book.class);
-        System.out.println(book);
-        
-        Employee emp = context.getBean(Employee.class);
-        System.out.println(emp);
-        
-        Singer singer = context.getBean(Singer.class);
-       singer.singing();
+//        Book book = context.getBean(Book.class);
+//        System.out.println(book);
+//        
+//        Employee emp = context.getBean(Employee.class);
+//        System.out.println(emp);
+//        
+//        Singer singer = context.getBean(Singer.class);
+//       singer.singing();
+       
+       OrdersPublisher publisher = context.getBean(OrdersPublisher.class);
+       publisher.publishevent();
 
     }
 }
