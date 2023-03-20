@@ -1,5 +1,6 @@
 package com.spring.core.entity;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
@@ -11,13 +12,16 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @Component
-public class Author {
-
-	@Value("131")
-	private int aid;
-	@Value("Kathy Sierra")
-	private String aname;
-	@Value("IT")
-	private String genre;
+public class Book {
 	
+	@Value("201")
+	private int bid;
+	@Value("HTML5")
+	private String title;
+	@Value("510")
+	private double price;
+	@Autowired
+	private Author author;
+	
+
 }

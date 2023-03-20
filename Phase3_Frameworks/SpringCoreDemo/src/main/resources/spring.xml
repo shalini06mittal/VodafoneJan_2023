@@ -6,13 +6,20 @@
         http://www.springframework.org/schema/beans 
         http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-	<bean class="com.spring.core.entity.Author">
-		<!-- <constructor-arg name="aid" value="1"></constructor-arg>
-		<constructor-arg name="aname" value="Sumita Arora"></constructor-arg>
-		<constructor-arg name="genre" value="IT"></constructor-arg> -->
-		
+	<bean id="a1" class="com.spring.core.entity.Author" scope="prototype">
 		<property name="aid" value="101"></property>
 		<property name="aname" value="Shalin Mittal"></property>
 		<property name="genre" value="Suspense"></property>
+	</bean>
+	<bean id="a2" class="com.spring.core.entity.Author">
+		<constructor-arg name="aid" value="1"></constructor-arg>
+		<constructor-arg name="aname" value="Sumita Arora"></constructor-arg>
+		<constructor-arg name="genre" value="IT"></constructor-arg>
+	</bean>
+	<bean  class="com.spring.core.entity.Book">
+		<constructor-arg name="bid" value="111"></constructor-arg>
+		<constructor-arg name="title" value="Core Java"></constructor-arg>
+		<constructor-arg name="price" value="678"></constructor-arg>
+		<constructor-arg name="author" ref="a2"></constructor-arg>
 	</bean>
 </beans>
