@@ -10,14 +10,14 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Data
 @AllArgsConstructor
-@Component
+//@Component
 public class Author {
 
-	@Value("131")
+	//@Value("131")
 	private int aid;
-	@Value("Kathy Sierra")
+	//@Value("Kathy Sierra")
 	private String aname;
-	@Value("IT")
+	//@Value("IT")
 	private String genre;
 	
 }
