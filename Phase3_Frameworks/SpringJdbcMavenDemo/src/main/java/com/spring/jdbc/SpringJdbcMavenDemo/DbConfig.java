@@ -37,8 +37,8 @@ public class DbConfig {
 	// template design pattern => JdbcTemplate
 	@Bean
 	@Autowired
-	@Qualifier("ds2")
-	public JdbcTemplate template(DataSource ds)
+	public JdbcTemplate template(
+			@Qualifier("ds1")DataSource ds)
 	{
 		return new JdbcTemplate(ds);
 	}
