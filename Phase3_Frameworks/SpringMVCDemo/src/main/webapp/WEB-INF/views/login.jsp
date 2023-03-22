@@ -66,7 +66,8 @@
 					<div class="fadeIn first">
 						<h2 class='sign'>Sign In!</h2>
 					</div>
-					<span class='error'>Error : ${error }</span>
+					<span class='error'>${error }</span>
+					<br/>
 					<form action="login" method="POST">
 						<input type="text" id="login" class="fadeIn second" name="email"
 							placeholder="Email" value="sh@g.c" /> <input type="password"
@@ -74,12 +75,7 @@
 							placeholder="Password" /> <input type="submit"
 							class="fadeIn fourth" value="Log In" />
 					</form>
-					<%
-						String error = request.getParameter("error");
-					if(error !=  null){
-					%>
-					<div class="error">error : <%= error %></div>
-					<%} %>
+					
 				</div>
 			</div>
 		</div>

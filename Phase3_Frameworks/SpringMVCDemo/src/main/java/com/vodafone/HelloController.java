@@ -52,7 +52,7 @@ public class HelloController {
 		return  "login";
 	}
 	@PostMapping("/login")
-	public String login(LoginEntity entity)
+	public String login(LoginEntity entity, Map<String, String> error)
 	{
 		System.out.println("login post");
 		try {
@@ -64,7 +64,7 @@ public class HelloController {
 			// TODO Auto-generated catch block
 			//e.printStackTrace();
 			System.out.println("error");
-			Map<String, String> error = new HashMap<>();
+	
 			error.put("error", e.getMessage());
 			return "login";
 			//return "login?error="+e.getMessage();
