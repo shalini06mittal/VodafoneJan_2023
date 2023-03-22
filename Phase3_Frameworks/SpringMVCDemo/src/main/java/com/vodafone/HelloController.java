@@ -1,7 +1,16 @@
 package com.vodafone;
 
+import java.io.Serializable;
+
+import javax.servlet.http.HttpServletRequest;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+
+import com.vodafone.entity.Customer;
 /**
  * 1. create a webapp maven project
  * 2. add dependencies and update <properties> tag in pom.xml file
@@ -25,5 +34,30 @@ public class HelloController {
 		// this hello should exactly match with tje hello.jsp file
 		return  "hello";
 	}
+	
+	//@RequestMapping(method = RequestMethod.GET)
+	@GetMapping("/login")
+	public String loginUser(HttpServletRequest req)
+	{
+		System.out.println("login controller ");
+		System.out.println(req.getMethod());
+		// this hello should exactly match with tje hello.jsp file
+		return  "login";
+	}
+	@GetMapping("/register")
+	public String registerUser()
+	{
+		System.out.println("register controller");
+		// this hello should exactly match with tje hello.jsp file
+		return  "register";
+	}
+	@PostMapping("/register")
+	public String registerCustomer(Customer customer)
+	{
+		System.out.println(customer);
+		return "redirect:login";
+	}
+	
+	
 }
 
