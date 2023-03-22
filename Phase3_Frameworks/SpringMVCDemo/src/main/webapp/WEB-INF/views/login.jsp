@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8" isELIgnored="false"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -38,6 +38,7 @@
 						aria-current="page" href="index.jsp">Home</a></li>
 					<%
 					String id = (String) session.getAttribute("id");
+		
 					if (id == null) {
 					%>
 					<li class="nav-item"><a class="nav-link" href="login">Login</a>
@@ -57,14 +58,15 @@
 			</div>
 		</div>
 	</nav>
-	
+
 	<div class="container">
 		<div>
 			<div class="wrapper fadeInDown">
 				<div id="formContent">
 					<div class="fadeIn first">
-						<h2 class='sign'>Sign In</h2>
+						<h2 class='sign'>Sign In!</h2>
 					</div>
+					<span class='error'>Error : ${error }</span>
 					<form action="login" method="POST">
 						<input type="text" id="login" class="fadeIn second" name="email"
 							placeholder="Email" value="sh@g.c" /> <input type="password"
@@ -76,7 +78,7 @@
 						String error = request.getParameter("error");
 					if(error !=  null){
 					%>
-					<div class="error"><%= error %></div>
+					<div class="error">error : <%= error %></div>
 					<%} %>
 				</div>
 			</div>

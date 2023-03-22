@@ -1,16 +1,19 @@
 package com.vodafone;
 
-import java.io.Serializable;
+import java.util.HashMap;
+import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.vodafone.entity.Customer;
+import com.vodafone.entity.LoginEntity;
+import com.vodafone.service.LoginService;
 /**
  * 1. create a webapp maven project
  * 2. add dependencies and update <properties> tag in pom.xml file
@@ -25,6 +28,9 @@ import com.vodafone.entity.Customer;
 @Controller
 public class HelloController {
 
+	@Autowired
+	private LoginService loginService;
+	
 	public HelloController() {
 		System.out.println("Hello controller was created");
 	}
@@ -41,9 +47,32 @@ public class HelloController {
 	{
 		System.out.println("login controller ");
 		System.out.println(req.getMethod());
+		
 		// this hello should exactly match with tje hello.jsp file
 		return  "login";
 	}
+	@PostMapping("/login")
+	public String login(LoginEntity entity)
+	{
+		System.out.println("login post");
+		try {
+			if(this.loginService.checkLogin(entity.getEmail(), entity.getPassword()))
+			{
+				return "redirect:dashboard";
+			}
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			//e.printStackTrace();
+			System.out.println("error");
+			Map<String, String> error = new HashMap<>();
+			error.put("error", e.getMessage());
+			return "login";
+			//return "login?error="+e.getMessage();
+		}
+		System.out.println("***");
+		return  "redirect:login";
+	}
+	
 	@GetMapping("/register")
 	public String registerUser()
 	{
