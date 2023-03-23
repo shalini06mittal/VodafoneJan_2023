@@ -5,6 +5,7 @@ import javax.sql.DataSource;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
@@ -18,6 +19,17 @@ import org.springframework.web.servlet.view.InternalResourceViewResolver;
 @PropertySource("classpath:dbconfig.properties")
 public class ApplicationContextConfig {
 
+//	@Autowired
+//	private ApplicationContext context;
+//	
+//	@Bean
+//	public void beanDefinitions()
+//	{
+//		System.out.println("\n***************\n");
+//		for(String bean : context.getBeanDefinitionNames())
+//			System.out.println(bean);
+//	}
+	
 	@Bean(name = "viewResolver")
 	public InternalResourceViewResolver getViewResolver() {
 	    InternalResourceViewResolver viewResolver = new InternalResourceViewResolver();

@@ -15,5 +15,7 @@ public class CustomerDTO {
 	private String email;
 	private String phone;
 	private String city;
-	private boolean isMember;
+	private boolean member;
+	
+	
 }
