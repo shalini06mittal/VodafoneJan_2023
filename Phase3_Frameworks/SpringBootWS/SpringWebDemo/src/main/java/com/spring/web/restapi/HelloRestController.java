@@ -53,9 +53,15 @@ public class HelloRestController {
 	@GetMapping("/matrixall/{data}")///{data}")
 	public String getAllMatrixParameter(
 			@PathVariable String data,
-			@MatrixVariable() Map<String, Integer> map)
+			@MatrixVariable() Map<String, String> map)
 	{
-		return "Pages value is " + map.get("pages");
+		StringBuilder builder = new StringBuilder();
+		map.forEach((k,v)->{
+			System.out.println(k);
+			System.out.println(v);
+			builder.append(k+" : "+v+" ");
+		});
+		return "Map data is " + builder;
 	}
 	@PostMapping
 	public String postData()
