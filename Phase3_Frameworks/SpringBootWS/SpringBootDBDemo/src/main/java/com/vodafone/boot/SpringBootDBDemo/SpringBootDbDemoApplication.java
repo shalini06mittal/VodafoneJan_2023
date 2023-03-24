@@ -24,6 +24,11 @@ import com.vodafone.boot.SpringBootDBDemo.service.CustomerService;
  * 6. Create methods for CRUD operations
  * 7. In main mehtod call the CustomerService class and test the methods
  * 
+ * 
+ * if setting the context path in properties file:
+ * server.servlet.context-path=/v1
+ * 
+ * then uri will be http://localhost:8081/v1/rest
  * @author Shalini
  *
  */
