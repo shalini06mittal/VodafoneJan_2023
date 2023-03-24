@@ -41,7 +41,7 @@ public class HelloRestController {
 		return "GST value is "+gst+" and country is "+country;
 	}
 	// path parameters
-	// http://localhost:8081/rest/matrix;year=2010
+	// http://localhost:8081/rest/matrix/cars;year=2010
 	@GetMapping("/matrix/{data}")///{data}")
 	public String getMatrixParameter(
 			@PathVariable String data,
@@ -49,6 +49,7 @@ public class HelloRestController {
 	{
 		return "Year value is "+year;
 	}
+	// http://localhost:8081/rest/matrixall/cars;pages=2010
 	@GetMapping("/matrixall/{data}")///{data}")
 	public String getAllMatrixParameter(
 			@PathVariable String data,
