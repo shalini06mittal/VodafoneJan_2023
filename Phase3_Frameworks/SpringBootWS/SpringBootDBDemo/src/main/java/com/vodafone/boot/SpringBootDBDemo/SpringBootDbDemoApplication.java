@@ -6,7 +6,9 @@ import org.springframework.context.ApplicationContext;
 
 import com.vodafone.boot.SpringBootDBDemo.database.CustomerDB;
 import com.vodafone.boot.SpringBootDBDemo.dto.CustomerDTO;
+import com.vodafone.boot.SpringBootDBDemo.entity.Book;
 import com.vodafone.boot.SpringBootDBDemo.entity.Customer;
+import com.vodafone.boot.SpringBootDBDemo.service.BookService;
 import com.vodafone.boot.SpringBootDBDemo.service.CustomerService;
 
 /**
@@ -36,36 +38,39 @@ public class SpringBootDbDemoApplication {
 //		System.out.println(db.getCustomerCount());
 		
 		CustomerService service = context.getBean(CustomerService.class);
-		System.out.println(service.getCustomerCount());
+		//System.out.println(service.getCustomerCount());
 		
-		Customer c = new Customer("manisha@yahoo.com", "7238909870", "manisha", "Pune", true);
-		try {
-			System.out.println(service.insertCustomer(c));
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+//		Customer c = new Customer("manisha@yahoo.com", "7238909870", "manisha", "Pune", true);
+//		try {
+//			System.out.println(service.insertCustomer(c));
+//		} catch (Exception e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}
 		
-		Customer c1 = service.getCustomerByEmail("mani@yahoo.com");
+//		Customer c1 = service.getCustomerByEmail("mani@yahoo.com");
+//		System.out.println(c1);
+//		
+//		System.out.println(service.getCustomerByPhone("9999999999"));
 		
-		c1.setCity("Mumbai");
-		
-		try {
-			System.out.println(service.updateCustomer(c1));
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		
-		for (CustomerDTO dto : service.getCustomers())
-			System.out.println(dto);
-		
-		try {
-			service.deleteCustomer(c.getEmail());
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+//		c1.setCity("Mumbai");
+//		
+//		try {
+//			System.out.println(service.updateCustomer(c1));
+//		} catch (Exception e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}
+//		
+//		for (CustomerDTO dto : service.getCustomers())
+//			System.out.println(dto);
+//		
+//		try {
+//			service.deleteCustomer(c.getEmail());
+//		} catch (Exception e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}
 		
 //		try {
 //			System.out.println(service.insertCustomer(c));
@@ -73,6 +78,13 @@ public class SpringBootDbDemoApplication {
 //			// TODO Auto-generated catch block
 //			System.out.println(e.getMessage());
 //		}
+		
+		for(Customer c: service.getAllCustomerWhoAreMembers())
+			System.out.println(c);
+		
+		BookService bookService = context.getBean(BookService.class);
+		for(Book book: bookService.findBooksByAuthor(3))
+			System.out.println(book.getBooktitle()+ " : "+book.getPrice()+" : "+book.getAuthor().getName());
 	}
 
 }

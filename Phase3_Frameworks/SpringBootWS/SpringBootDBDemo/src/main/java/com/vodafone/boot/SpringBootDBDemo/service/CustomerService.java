@@ -6,7 +6,6 @@ import java.util.List;
 import javax.persistence.EntityNotFoundException;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.dao.DuplicateKeyException;
 import org.springframework.stereotype.Service;
 
 import com.vodafone.boot.SpringBootDBDemo.dto.CustomerDTO;
@@ -18,7 +17,8 @@ public class CustomerService {
 
 	@Autowired
 	private CustomerRepository repo;
-
+	
+	
 
 	public long getCustomerCount()
 	{
@@ -49,6 +49,18 @@ public class CustomerService {
 		return this.repo.findById(email)
 				.orElseThrow(()-> new EntityNotFoundException(email+ " does not exist"));
 	}
+	
+	public Customer getCustomerByPhone(String phone)
+	{
+		return this.repo.findByPhone(phone)
+				.orElseThrow(()-> new EntityNotFoundException(phone+ " does not exist"));
+	}
+	public List<Customer> getAllCustomerWhoAreMembers()
+	{
+		
+		return this.repo.findByIsmemberTrue();
+	}
+	
 	public List<CustomerDTO> getCustomers()
 	{
 		List<CustomerDTO> customers = new ArrayList<>();
