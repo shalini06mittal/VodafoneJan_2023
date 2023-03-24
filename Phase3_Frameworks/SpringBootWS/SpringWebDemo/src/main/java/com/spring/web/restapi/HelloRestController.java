@@ -1,5 +1,7 @@
 package com.spring.web.restapi;
 
+import java.util.Map;
+
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.MatrixVariable;
@@ -40,10 +42,19 @@ public class HelloRestController {
 	}
 	// path parameters
 	// http://localhost:8081/rest/matrix;year=2010
-	@GetMapping("/matrix/{year}")
-	public String getMatrixParameter(@MatrixVariable() int year)
+	@GetMapping("/matrix/{data}")///{data}")
+	public String getMatrixParameter(
+			@PathVariable String data,
+			@MatrixVariable() int year)
 	{
 		return "Year value is "+year;
+	}
+	@GetMapping("/matrixall/{data}")///{data}")
+	public String getAllMatrixParameter(
+			@PathVariable String data,
+			@MatrixVariable() Map<String, Integer> map)
+	{
+		return "Pages value is " + map.get("pages");
 	}
 	@PostMapping
 	public String postData()
