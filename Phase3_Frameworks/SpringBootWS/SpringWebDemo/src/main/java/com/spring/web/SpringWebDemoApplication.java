@@ -15,10 +15,13 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
   and prefix and suffix for views if it is MVC application
   4. Add jsp files in the webapp folder
   5. Create controllers
+  jdbc:h2:mem:f5c97764-11eb-4166-bbd9-676e34ef6656
   
+  http://localhost:8081/h2-console/
  */
 @SpringBootApplication
 public class SpringWebDemoApplication {
+
 
 	public static void main(String[] args) {
 		SpringApplication.run(SpringWebDemoApplication.class, args);
