@@ -1,5 +1,6 @@
 package com.spring.web.entity;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -8,27 +9,28 @@ import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
-//@Entity
-//@Table(name="bookentity")
-public class Book {
+@Entity
+@Table(name="book_entity")
+public class BookEntity {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int bid;
+	private int bookid;
 	private String booktitle;
 	@OneToOne
 	@JoinColumn(name="authorid")
 	private Author author;
 	private double price;
+	@Column(name="year_of_pub")
 	private int year;
 	
-	public Book() {
+	public BookEntity() {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Book(int bid, String booktitle, Author author, double price) {
+	public BookEntity(int bookid, String booktitle, Author author, double price) {
 		super();
-		this.bid = bid;
+		this.bookid = bookid;
 		this.booktitle = booktitle;
 		this.author = author;
 		this.price = price;
@@ -42,15 +44,16 @@ public class Book {
 		this.year = year;
 	}
 
-	public int getBid() {
-		return bid;
-	}
-
-	public void setBid(int bid) {
-		this.bid = bid;
-	}
-
 	
+	
+
+	public int getBookid() {
+		return bookid;
+	}
+
+	public void setBookid(int bookid) {
+		this.bookid = bookid;
+	}
 
 	public String getBooktitle() {
 		return booktitle;
@@ -76,10 +79,10 @@ public class Book {
 		this.price = price;
 	}
 
-	@Override
-	public String toString() {
-		return "Book [bid=" + bid + ", title=" + booktitle + ", author=" + author + ", price=" + price + "]";
-	}
-	
+//	@Override
+//	public String toString() {
+//		return "Book [bid=" + bid + ", title=" + booktitle + ", author=" + author + ", price=" + price + "]";
+//	}
+//	
 	
 }
