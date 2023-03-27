@@ -21,6 +21,7 @@ import org.springframework.web.multipart.MultipartFile;
 @RequestMapping("/rest")
 public class HelloRestController {
 
+
 	@GetMapping
 	public String getData()
 	{
