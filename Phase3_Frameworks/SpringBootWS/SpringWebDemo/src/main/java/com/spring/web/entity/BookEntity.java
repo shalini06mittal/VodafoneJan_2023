@@ -79,10 +79,13 @@ public class BookEntity {
 		this.price = price;
 	}
 
-//	@Override
-//	public String toString() {
-//		return "Book [bid=" + bid + ", title=" + booktitle + ", author=" + author + ", price=" + price + "]";
-//	}
-//	
+	@Override
+	public String toString() {
+		return "BookEntity [bookid=" + bookid + ", booktitle=" + booktitle + ", author=" + author + ", price=" + price
+				+ ", year=" + year + "]";
+	}
+
+	
+	
 	
 }

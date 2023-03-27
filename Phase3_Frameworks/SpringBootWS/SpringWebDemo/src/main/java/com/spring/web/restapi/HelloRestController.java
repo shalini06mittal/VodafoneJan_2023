@@ -1,7 +1,11 @@
 package com.spring.web.restapi;
 
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
 import java.util.Map;
 
+import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.MatrixVariable;
@@ -11,6 +15,7 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.multipart.MultipartFile;
 
 @RestController // @Controller + @ResponseBody
 @RequestMapping("/rest")
@@ -79,5 +84,37 @@ public class HelloRestController {
 		return "DELETE CALLED";
 	}
 
+	@PostMapping(path="/upload", consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
+	public String fileUpload(@RequestParam MultipartFile file)
+	{
+		String result = "File uploaded successfully";
+		
+		File convertFile = new File(file.getOriginalFilename());
+		FileOutputStream outFile = null;
+		try {
+			convertFile.createNewFile();
+			
+			outFile = new FileOutputStream(convertFile);
+			
+			outFile.write(file.getBytes());
+			
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			result = e.getMessage();
+		}
+		finally {
+			if(outFile != null)
+				try {
+					outFile.close();
+				} catch (IOException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+		}
+		return result;
+		
+	}
+	
 
 }

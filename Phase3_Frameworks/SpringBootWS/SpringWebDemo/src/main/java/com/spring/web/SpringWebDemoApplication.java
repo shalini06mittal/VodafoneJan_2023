@@ -52,6 +52,7 @@ public class SpringWebDemoApplication {
 		Author a1 = new Author(1, "James", "suspense");
 		Author a2 = new Author(2, "Parul", "thriller");
 		
+		
 		BookEntity b1 = new BookEntity(1, "Twilight", a1, 450);
 		BookEntity b2 = new BookEntity(2, "2 days to go", a1, 980);
 		BookEntity b3 = new BookEntity(3, "lets have fun", a2, 567);

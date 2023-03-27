@@ -10,5 +10,14 @@
 
 <h1>hello</h1>
 <div> <a href="login">Login</a></div>
+
+<div>
+	<form method="post" enctype="multipart/form-data" 
+	action="rest/upload">
+		<input type="file" name="file"/>
+		<input type="submit">
+	</form>
+
+</div>
 </body>
 </html>
