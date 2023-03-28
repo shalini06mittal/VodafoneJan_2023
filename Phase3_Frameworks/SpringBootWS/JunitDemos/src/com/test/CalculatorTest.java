@@ -2,8 +2,13 @@ package com.test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+import java.time.Duration;
+
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.RepeatedTest;
 import org.junit.jupiter.api.Test;
 
 import com.java.Calculator;
@@ -24,6 +29,8 @@ class CalculatorTest {
 	}
 	
 	@Test
+	@Disabled
+	@DisplayName("Testing add for result")
 	void testAddShouldReturnValue() {
 		int actual = ob.add(5, 9);
 		int expected = 14;
@@ -38,6 +45,7 @@ class CalculatorTest {
 	}
 	
 	@Test
+	@RepeatedTest(3)
 	void testSubShouldNotReturnNegativeValue() {
 		int actual = ob.sub(15, 9);
 		int expected = 6;
@@ -53,6 +61,13 @@ class CalculatorTest {
 	@Test
 	void testSquareRootShouldThrowException() throws Exception {
 		assertThrows(Exception.class, ()-> ob.squareroot(-10));
+		
+	}
+	
+	@Test
+	void testEncryptShouldReturnValueInTime() throws Exception {
+	
+		assertTimeout(Duration.ofMillis(2010), () -> ob.encrypt("some value"));
 	}
 
 }
