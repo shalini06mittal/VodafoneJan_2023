@@ -10,6 +10,7 @@
 
 <h1>hello</h1>
 <div> <a href="login">Login</a></div>
+<div> <a href="mvc/books">Books Page</a></div>
 
 <div>
 	<form method="post" enctype="multipart/form-data" 

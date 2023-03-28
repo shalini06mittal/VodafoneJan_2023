@@ -51,21 +51,35 @@ public class SpringWebDemoApplication {
 		
 		Author a1 = new Author(1, "James", "suspense");
 		Author a2 = new Author(2, "Parul", "thriller");
+		Author a3 = new Author(3, "Charles", "comedy");
+		Author a4 = new Author(4, "Shalini", "adventure");
+		Author a5 = new Author(5, "Ioannis", "IT");
+		
 		
 		
 		BookEntity b1 = new BookEntity(1, "Twilight", a1, 450);
 		BookEntity b2 = new BookEntity(2, "2 days to go", a1, 980);
 		BookEntity b3 = new BookEntity(3, "lets have fun", a2, 567);
+		BookEntity b4 = new BookEntity(4, "Flirting with stocks", a5, 950);
+		BookEntity b5 = new BookEntity(5, "neighbourhood", a1, 730);
+		BookEntity b6 = new BookEntity(6, "Up the sky", a3, 837);
 		
 		customerRepo.save(c1);
 		customerRepo.save(c2);
 		
 		authorRepo.save(a1);
 		authorRepo.save(a2);
+		authorRepo.save(a3);
+		authorRepo.save(a4);
+		authorRepo.save(a5);
+		
 		
 		bookRepo.save(b1);
 		bookRepo.save(b2);
 		bookRepo.save(b3);
+		bookRepo.save(b4);
+		bookRepo.save(b5);
+		bookRepo.save(b6);
 	}
 
 }
