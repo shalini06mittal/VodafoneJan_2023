@@ -9,11 +9,19 @@ public class SpringBootConsumerApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(SpringBootConsumerApplication.class, args);
-		
+
 		RestTemplate template = new RestTemplate();
-		
+
 		String data = template.getForObject("http://localhost:8081/rest", String.class);
 		System.out.println(data);
 	}
 
+
+	public String consume()
+	{
+		RestTemplate template = new RestTemplate();
+
+		String data = template.getForObject("http://localhost:8081/rest", String.class);
+		return data;
+	}
 }
