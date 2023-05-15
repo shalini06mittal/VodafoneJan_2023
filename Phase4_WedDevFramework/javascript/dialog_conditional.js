@@ -16,7 +16,7 @@ console.log(no1 * no2);
 let choice = confirm("Are you sure, you want to go to contact?");
 if (choice) {
   //  alert("Thanks");
-  window.location.href = 'http://127.0.0.1:5500/javascript/contact.html'
+  window.location.href = 'http://127.0.0.1:5500/javascript/contact.html?id=1'
 }
 else {
   alert("Np");
