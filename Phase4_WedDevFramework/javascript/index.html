@@ -5,10 +5,27 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        select{
+            width: 60px;
+            height: 25px;
+        }
+    </style>
 </head>
 <body>
     <h1>Javascript Demos !!!</h1>
     <a href="about.html">About</a>
+    <input type="text" id="n1" value="0" placeholder="Enter no1"/>
+    <input type="text" id="n2" value="0" placeholder="Enter no2"/>
+    <select id="op">
+        <option>+</option>
+        <option>-</option>
+        <option>*</option>
+        <option>/</option>
+    </select>
+    <br/>
+    <button onclick="process()">Calculate</button>
+    <p id="res">Result : 0</p>
     <!--
     http://127.0.0.1:5500/javascript/index.html
         HTML is used to display the content
@@ -16,7 +33,7 @@
         JS => interactive websites
         scripting language
     -->
-    <script src="jsobjects.js"></script>
+    <script src="calculator.js"></script>
     <!-- <script src="basic.js"></script> -->
     <script>
         // javascript code

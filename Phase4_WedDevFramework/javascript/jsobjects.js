@@ -22,3 +22,24 @@ var employees = [
  * shalini  56789
  * abhishekh
  */
+keys = Object.keys(employees[0])
+let str = '<table border="1"><tr>';
+// template literals
+for (let key of keys)
+    //document.write(key+'&nbsp;&nbsp;&nbsp;&nbsp;')
+    str += `<th>
+        ${key}</th>`
+str+= '</tr>';
+for (let emp of employees)
+{
+    //document.write('</p>');
+    str += '<tr>'
+    for (let key of keys)
+        //document.write(emp[key]+'&nbsp;&nbsp;&nbsp;&nbsp;');
+        str += `<td>
+        ${emp[key]}</td>`
+    //document.write('</p>');
+    str += '</tr>';
+}
+str+='</table>'
+document.write(str)
