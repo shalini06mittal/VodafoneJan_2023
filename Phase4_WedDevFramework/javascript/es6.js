@@ -73,3 +73,61 @@ let {id, price, prodname} = product;
     console.log(n, val);
  }
 data(1,2,3,4,5,6,7,8,9, 10)
+
+// class concept
+class Employee{
+    constructor( name, city){
+        this.name = name;
+        this.city = city;
+    }
+    showDetails(){
+        console.log(`Name : ${this.name} City : ${this.city}`);
+    }
+}
+class Developer extends Employee{
+    constructor(name , city){
+        super(name, city);
+        this.projectname = 'Risk Management';
+    }
+    showDetails(){
+        super.showDetails();
+        console.log('Project name ',this.projectname);
+    }
+}
+let emp = new Employee('Shalini', 'Mumbai');
+emp.showDetails();
+let dev = new Developer('Maya', 'Pune')
+dev.showDetails();
+
+
+var employees = [
+    {'name':'shalini','phone':'56789',age:30, 'city':'Pune'},
+    {'name':'abhishekh','phone':'131223123',age:20, 'city':'Mumbai'},
+    {'name':'mysha','phone':'676744556',age:50, 'city':'Pune'},
+    {'name':'vivek','phone':'456456456',age:10, 'city':'Pune'},
+]
+
+console.log(employees.every(emp => emp.city === 'Pune'));
+console.log(employees.some(emp => emp.city === 'Pune'));
+
+var itemamount = [100, 200, 150, 180, 300];
+
+let sum = 0;
+for(let amt of itemamount)
+{
+    sum += amt;
+}
+console.log(sum)
+
+let total = itemamount.reduce((sum, amt)=> {
+    console.log(sum, amt)
+    sum += amt;
+    return sum;
+});
+console.log(total)
+
+
+let names =['Shalini', 'Manisha','Denisa'];
+
+let updatednames = names.reduce((pn, cn)=> pn+' '+cn);
+console.log(updatednames)
