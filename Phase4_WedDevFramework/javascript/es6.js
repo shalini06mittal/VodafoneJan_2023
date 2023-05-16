@@ -1,3 +1,8 @@
+// https://ultimatecourses.com/blog/all-about-immutable-arrays-and-objects-in-javascript
+
+// https://www.javascripttutorial.net/es6/
+
+
 function power(p=2, base)
 {
     return base**p;
@@ -51,9 +56,9 @@ let {id, price, prodname} = product;
  console.log(st1)
  console.log(student)
 
- //let st2 = {...student} // shallow cloning
+ let st2 = {...student, "phnos":[...student.phnos]} // shallow cloning
  
- let st2 = Object.assign({}, student)
+ 
  console.log(st2)
  console.log(student)
  st2.name='Michaela';
