@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -25,6 +26,7 @@ import io.swagger.v3.oas.annotations.responses.ApiResponses;
 
 @RestController
 @RequestMapping("/books")
+@CrossOrigin(origins = {"http://127.0.0.1:5500"})
 public class BookController {
 
 	@Autowired
@@ -70,7 +72,7 @@ public class BookController {
 			map.put("book",this.bookService.getBookById(id));
 			return ResponseEntity.ok(map);
 	}
-	@GetMapping()
+	@GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
 	@Operation(summary = "Returns list of books as json or xml.Author id is optional if passed will return all bokk byt the authir id")
 	public List<BookEntity> getAllBooks(@RequestParam(required = false) Integer authorid)
 	{

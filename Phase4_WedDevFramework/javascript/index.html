@@ -25,7 +25,8 @@
     </select>
     <br/>
     <button onclick="process()">Calculate</button>
-    <p id="res">Result : 0</p>
+    <button onclick="getBookCallingPromise()">Get Books</button>
+    <div id="res">Result : 0</div>
     <!--
     http://127.0.0.1:5500/javascript/index.html
         HTML is used to display the content
@@ -33,8 +34,8 @@
         JS => interactive websites
         scripting language
     -->
-    <script type="module" src="modules.js"></script>
-    <!-- <script src="basic.js"></script> -->
+    <!-- <script type="module" src="modules.js"></script> -->
+    <script src="fetchrestapi.js"></script>
     <script>
         // javascript code
        // alert("hey");
