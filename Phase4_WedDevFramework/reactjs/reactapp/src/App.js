@@ -4,13 +4,14 @@ import WelcomeClass from './components/WelcomeClass';
 import WelcomeFunc from './components/WelcomeFunc';
 import ClockClass from './components/ClockClass';
 import ClockFunc from './components/ClockFunc';
+import Login from './components/Login';
 // JSX -> component
 function App() {
   let username = 'VodaFone';
 
   return (
     <div className="App">
-      
+      <Login/>
       <ClockClass/>
       <ClockFunc/>
       {/* data is always passed from parent to child */}
