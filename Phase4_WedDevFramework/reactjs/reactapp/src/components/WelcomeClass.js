@@ -10,12 +10,25 @@ export default class WelcomeClass extends Component {
     // let username = this.props.username
     // let city = this.props.city;
     return (
-      <div style={{backgroundColor:'yellow'}}>
+    //   <div style={{backgroundColor:'yellow'}}>
+    <div style={styles.main}>
         {/* <h1>Welcome {this.props.username}</h1>
         <p>{this.props.city}</p> */}
         <h1>Welcome {username}</h1>
-        <p>{city}</p>
+        <p style={styles.text}>{city}</p>
     </div>
     )
   }
+}
+const styles = {
+    main:{
+        backgroundColor:'lightyellow',
+        padding:'6px',
+        color:'black',
+        borderBottom:'3px solid black'
+    },
+    text:{
+        fontSize:'16px',
+        color:'red'
+    }
 }
