@@ -1,0 +1,16 @@
+{
+  "name": "nodejs",
+  "version": "1.0.0",
+  "description": "This is a trial node project",
+  "main": "script.js",
+  "scripts": {
+    "start": "node script.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Shalini Mittal",
+  "license": "ISC",
+  "dependencies": {
+    "bootstrap": "^5.2.3",
+    "jquery": "^3.7.0"
+  }
+}
