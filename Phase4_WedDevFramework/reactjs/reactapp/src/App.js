@@ -2,6 +2,8 @@ import logo from './logo.svg';
 import './App.css';
 import WelcomeClass from './components/WelcomeClass';
 import WelcomeFunc from './components/WelcomeFunc';
+import ClockClass from './components/ClockClass';
+import ClockFunc from './components/ClockFunc';
 // JSX -> component
 function App() {
   let username = 'VodaFone';
@@ -9,6 +11,8 @@ function App() {
   return (
     <div className="App">
       
+      <ClockClass/>
+      <ClockFunc/>
       {/* data is always passed from parent to child */}
       <WelcomeClass username={username} 
       city ="Mumbai"/>
