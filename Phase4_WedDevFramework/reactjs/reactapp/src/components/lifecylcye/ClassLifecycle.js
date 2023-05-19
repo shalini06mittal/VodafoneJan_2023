@@ -9,11 +9,12 @@ export default class  extends Component {
         currdate: new Date().toLocaleString()
      }
     }
+    
     // once
     componentDidMount()
     {
         console.log('component did mount called');
-        setInterval(() => {
+        this.intv =  setInterval(() => {
             this.updateTime();
         }, 1000);
     }
@@ -31,9 +32,11 @@ export default class  extends Component {
     componentWillUnmount()
     {
         console.log('component will unmount');
+        clearInterval(this.intv);
     }
     updateTime()
     {
+        console.log('update time')
         this.setState({currdate : new Date().toLocaleString()})
     }
   render() {

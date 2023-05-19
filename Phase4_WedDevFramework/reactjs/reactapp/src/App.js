@@ -5,8 +5,9 @@ import WelcomeFunc from './components/WelcomeFunc';
 import ClockClass from './components/ClockClass';
 import ClockFunc from './components/ClockFunc';
 import Login from './components/Login';
-import ClassLifecycle from './components/ClassLifecycle';
+import ClassLifecycle from './components/lifecylcye/ClassLifecycle';
 import { useState } from 'react';
+import Preferences from './components/lifecylcye/Preferences';
 // JSX -> component
 function App() {
   let username = 'VodaFone';
@@ -14,8 +15,9 @@ function App() {
 
   return (
     <div className="App">
-      {selected ? <ClassLifecycle/> : <h3>Component Unmouonted</h3>}
-      <input type='checkbox' checked={selected} onChange={()=>setselected(!selected)}/>
+      <Preferences/>
+      {/* {selected ? <ClassLifecycle/> : <h3>Component Unmouonted</h3>}
+      <input type='checkbox' checked={selected} onChange={()=>setselected(!selected)}/> */}
       {/* <Login/>
       <ClockClass/>
       <ClockFunc/> */}
