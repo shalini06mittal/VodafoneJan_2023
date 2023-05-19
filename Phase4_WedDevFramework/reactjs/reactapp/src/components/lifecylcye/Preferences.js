@@ -10,7 +10,7 @@ export default class Preferences extends Component {
       this.state = {
          displayname:"Guest",
          color:'yellow',
-         show:true
+         show:false
       }
     }
 
@@ -20,17 +20,20 @@ export default class Preferences extends Component {
     changeColorHandler = (e) => {
         this.setState({color: e.target.value})
     }
+    close = ()=>{
+        this.setState({show:false})
+    }
   render() {
-    const {displayname, color} = this.state;
+    const {displayname, color, show} = this.state;
     return (
       <div className='preferences'>
-        <h3>Select Your Preference</h3>
-        <div className='form-group'>
+        <h3>Select Your Preference </h3>
+        <div className='mb-3'>
             <label htmlFor='displayname' className='sr-only'>Enter Name</label>
             <input type='text' className='form-control' name='displayname' value={displayname}
             onChange={this.changeNameHandler}/>
         </div>
-        <div className='form-group'>
+        <div className='mb-3'>
             <label htmlFor='color' className='sr-only'>Choose your favorite color</label>
             <select className='form-control' name='color' value={color} onChange={this.changeColorHandler}>
                 <option value='black'>Black</option>
@@ -40,10 +43,10 @@ export default class Preferences extends Component {
                 <option value='yellow'>Yellow</option>
             </select>
         </div>
-        <div className='form-group'>
-            <button onClick={() => this.setState({show:true})}>Save preferences</button>
+        <div className='mb-3'>
+            <button className='btn btn-primary' onClick={() => this.setState({show:true})}>Save preferences</button>
         </div>
-        <PreferenceSummary prefdata = {this.state}/>
+        <PreferenceSummary close={this.close} prefdata = {this.state}/>
       </div>
     )
   }
