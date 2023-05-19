@@ -37,9 +37,4 @@ const PreferenceSummaryFunc=(props)=>{
         )
 }
 
-function areEqual(prevProps, nextProps){
-    console.log(' are equal')
-    return prevProps.preference.show === nextProps.preference.show
-}
-
 export default PreferenceSummaryFunc;
