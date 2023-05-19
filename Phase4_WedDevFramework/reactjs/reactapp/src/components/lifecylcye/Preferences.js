@@ -8,13 +8,14 @@ export default class Preferences extends Component {
       super(props)
     
       this.state = {
-         displayname:"Guest",
+         displayname:"SHALINI",
          color:'yellow',
          show:false
       }
     }
 
      changeNameHandler = (e)=>{
+        console.log('name change', e.target.value)
         this.setState({displayname:e.target.value})
     }
     changeColorHandler = (e) => {
@@ -30,7 +31,8 @@ export default class Preferences extends Component {
         <h3>Select Your Preference </h3>
         <div className='mb-3'>
             <label htmlFor='displayname' className='sr-only'>Enter Name</label>
-            <input type='text' className='form-control' name='displayname' value={displayname}
+            <input type='text' className='form-control' 
+            name='displayname' value={displayname}
             onChange={this.changeNameHandler}/>
         </div>
         <div className='mb-3'>
@@ -45,8 +47,8 @@ export default class Preferences extends Component {
         </div>
         <div className='mb-3'>
             <button className='btn btn-primary' onClick={() => this.setState({show:true})}>Save preferences</button>
-        </div>
-        <PreferenceSummary close={this.close} prefdata = {this.state}/>
+        </div> 
+       <PreferenceSummary close={this.close} prefdata = {this.state}/>
       </div>
     )
   }
