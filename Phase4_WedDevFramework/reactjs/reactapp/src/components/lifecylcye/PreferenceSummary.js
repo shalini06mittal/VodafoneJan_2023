@@ -16,7 +16,7 @@ export default class PreferenceSummary extends Component {
     }
 
   render() {
-   // console.log('pref summary')
+    console.log('pref summary class render')
     const {color, displayname, show} = this.props.prefdata;
     
     return (
