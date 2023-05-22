@@ -1,34 +1,8 @@
 import React from 'react'
 import GroceryItemDetails from './GroceryItemDetails'
 
-const items = [
-    {
-        'id':1,
-        'name':'Milk',
-        'price':50,
-        'description':'Amul milk good for health'
-    },
-    {
-        'id':2,
-        'name':'Bread',
-        'price':40,
-        'description':'Wibs Wheat bread'
-    },
-    {
-        'id':3,
-        'name':'Cookies',
-        'price':150,
-        'description':'Good Day chocolate chip cookies'
-    },
-    {
-        'id':4,
-        'name':'Potatoes',
-        'price':60,
-        'description':'Frresh and organic'
-    },
-]
 
-export default function GroceryList() {
+export default function GroceryList({items}) {
 
   return (
     <div>
