@@ -17,32 +17,35 @@ export default function GroceryForm(props) {
 
     const validate = ()=>
     {
-        let errors = {'name':'', 'price':'', 'description':''};
-        if(item.name.length === 0 || item.name === '' )
-            errors.name = "Item name is required"
+        let newerrors = {'name':'', 'price':'', 'description':''};
+        if(item.name.length === 0 )
+            newerrors.name = "Item name is required"
         
         if(item.price === 0 )
-            errors.price = "Price should be greater than 0"
+            newerrors.price = "Price should be greater than 0"
         
-        if(item.description.length < 10 && item.description === '' )
-            errors.description = "Item description is required and should be > 10"
+        if(item.description === '' || item.description.length < 10  )
+            newerrors.description = "Item description is required and should be > 10"
 
-        return errors;
+        setErrors(newerrors);
 
     }
 
     const isValid = ()=>{
         return (
-            errors.name.length===0 && errors.description.length===0 && errors.price.length===0
+           !(errors.name.length===0 && errors.description.length===0 && errors.price===0)
         )
     }
+    // console.log(isValid())
+    // console.log(errors.name.length===0 || errors.description.length===0 || errors.price.length===0)
+
 
     const handleChangeItem =(event)=>{
         let name = event.target.name;
         let value = event.target.value;
-       // console.log(name, value)
+        //console.log(name, value)
         setItem({...item, [name]:value})
-        setErrors(()=>validate(item))
+        validate()
     }
 
     const handleChange =(event)=>{
@@ -90,9 +93,7 @@ export default function GroceryForm(props) {
                     <input type="text" className="form-control" 
                     name='name' value={item.name} onChange={handleChangeItem}
                     placeholder="Enter Item" aria-label="First name"/>
-                    {errors.name.length===0 && 
-                        <span className='error'>{errors.name}</span>
-                    }
+                   
                 </div>
                 <div className="col">
                     <input type="text" className="form-control" 
@@ -108,8 +109,7 @@ export default function GroceryForm(props) {
             <div className='row text-center mb-3'>
                 <div className="col-12">
                     <button type="submit" 
-                    disabled = {item.itemname ==='' || item.description==='' || item.price===0
-                    || item.name.length==0 || item.description.length===0
+                    disabled = {!isValid()
                     }
                     className="btn btn-primary">ADD ITEM</button>
                 </div>
