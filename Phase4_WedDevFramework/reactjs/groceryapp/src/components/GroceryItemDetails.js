@@ -16,7 +16,7 @@ export default function GroceryItemDetails(props) {
       <div className="col-md-3">
             <button className="btn btn-warning">Edit</button>
             &nbsp;&nbsp;
-            <button className="btn btn-warning">Delete</button>
+            <button className="btn btn-warning" onClick={()=>props.deleteItem(item.id)}>Delete</button>
       </div>
     </div>
   );

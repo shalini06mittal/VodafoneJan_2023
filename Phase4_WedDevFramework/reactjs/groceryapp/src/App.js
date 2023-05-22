@@ -40,12 +40,18 @@ function App() {
     setItems([...items, newitem])
   }
 
+  const deleteItem = (itemid)=>{
+    console.log(itemid)
+    const newItems = items.filter(item => item.id !== itemid);
+    setItems(newItems);
+  }
+  
   return (
     <div>
       <h2 className="App">Grocery List</h2>
       <div className="container">
         <GroceryForm addItem={addItem}/>
-        <GroceryList items={items}/>
+        <GroceryList items={items} deleteItem={deleteItem}/>
       </div>
     </div>
   );

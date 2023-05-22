@@ -2,7 +2,7 @@ import React from 'react'
 import GroceryItemDetails from './GroceryItemDetails'
 
 
-export default function GroceryList({items}) {
+export default function GroceryList({items, deleteItem}) {
 
   return (
     <div>
@@ -39,7 +39,7 @@ export default function GroceryList({items}) {
         } */}
         {
             items.map(item => <GroceryItemDetails 
-                key={item.id} 
+                key={item.id}  deleteItem = {deleteItem}
                 item={item}/>                       
             )
         }
