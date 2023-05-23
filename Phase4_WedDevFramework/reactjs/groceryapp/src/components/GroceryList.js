@@ -16,6 +16,10 @@ export default function GroceryList({items, deleteItem, editItem}) {
         setIsedit(true)
     }
     
+    const hideEdit = (item)=>{
+        setIsedit(false);
+        editItem(item);
+    }
     const cancel=()=>{
         setIsedit(false)
     }
@@ -59,7 +63,7 @@ export default function GroceryList({items, deleteItem, editItem}) {
             )
         }
        <hr/>
-       {isedit && <GroceryEditItem itemobj={itemobj} cancel={cancel} editItem={editItem}/>}
+       {isedit && <GroceryEditItem itemobj={itemobj} cancel={cancel} hideEdit={hideEdit}/>}
     </div>
   )
 }

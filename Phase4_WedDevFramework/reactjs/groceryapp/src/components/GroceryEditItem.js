@@ -1,6 +1,6 @@
 import React , {useState, useEffect} from 'react'
 
-export default function GroceryEditItem({itemobj, cancel, editItem}) {
+export default function GroceryEditItem({itemobj, cancel, hideEdit}) {
 
     const [item, setItem] = useState(itemobj);
 
@@ -26,7 +26,7 @@ export default function GroceryEditItem({itemobj, cancel, editItem}) {
 
     const handleSubmit = (e)=>{
         e.preventDefault();
-        editItem(item);
+        hideEdit(item);
     }
 
   return (

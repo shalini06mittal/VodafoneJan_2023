@@ -34,6 +34,7 @@ const initialState = [
 function App() {
 
   const [items, setItems] = useState(initialState);
+  const [showAddItem, setShowAddItem] = useState(false);
 
   const addItem = (newitem)=>{
     console.log(newitem);
@@ -49,13 +50,7 @@ function App() {
   
   const editItem =(item)=>{
     console.log('editing', item)
-    const updatedItems = items.map(obj=>{
-      if(obj.id === item.id)
-      {
-        obj = item;
-      }
-      return obj;
-    })
+    const updatedItems = items.map(obj=> obj.id === item.id ? item : obj);
     setItems(updatedItems)
   }
   
@@ -63,7 +58,12 @@ function App() {
     <div>
       <h2 className="App">Grocery List</h2>
       <div className="container">
+        <div class="mb-3">
+        <button onClick={()=>setShowAddItem(!showAddItem)}>Add New Item</button>
+        </div>
+        {showAddItem && 
         <GroceryForm addItem={addItem}/>
+        }
         <GroceryList items={items} deleteItem={deleteItem} editItem={editItem}/>
       </div>
     </div>
