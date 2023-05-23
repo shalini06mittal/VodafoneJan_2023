@@ -1,15 +1,19 @@
-import React , {useState} from 'react'
+import React , {useState, useEffect} from 'react'
 
-export default function GroceryEditItem({itemobj, cancel}) {
+export default function GroceryEditItem({itemobj, cancel, editItem}) {
 
     const [item, setItem] = useState(itemobj);
 
-    console.log('edit ', itemobj)
+    console.log('edit component ', itemobj)
+    
+    useEffect(()=>{
+        console.log('use effect')
+        setItem(itemobj)
+    },[itemobj]);
 
     const handleChangeItem =(event)=>{
         let name = event.target.name;
         let value = event.target.value; 
-        console.log('value ', value)
         if(name === 'price') 
             if(value){
                 console.log('if')
@@ -22,7 +26,7 @@ export default function GroceryEditItem({itemobj, cancel}) {
 
     const handleSubmit = (e)=>{
         e.preventDefault();
-       // editItem(item);
+        editItem(item);
     }
 
   return (

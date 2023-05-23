@@ -4,7 +4,7 @@ import GroceryEditItem from "./GroceryEditItem";
 export default function GroceryItemDetails(props) {
   let { item } = props;
 
-  const [isedit, setIsedit] = useState(false)
+  // const [isedit, setIsedit] = useState(false)
 
   return (
     <div>

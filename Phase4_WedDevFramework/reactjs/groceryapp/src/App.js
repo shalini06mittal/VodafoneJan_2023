@@ -33,7 +33,8 @@ const initialState = [
 
 function App() {
 
-  const [items, setItems] = useState(initialState)
+  const [items, setItems] = useState(initialState);
+
   const addItem = (newitem)=>{
     console.log(newitem);
     newitem.id = items.length+1;
@@ -46,9 +47,18 @@ function App() {
     setItems(newItems);
   }
   
-  const editItem =()=>{
-    
+  const editItem =(item)=>{
+    console.log('editing', item)
+    const updatedItems = items.map(obj=>{
+      if(obj.id === item.id)
+      {
+        obj = item;
+      }
+      return obj;
+    })
+    setItems(updatedItems)
   }
+  
   return (
     <div>
       <h2 className="App">Grocery List</h2>

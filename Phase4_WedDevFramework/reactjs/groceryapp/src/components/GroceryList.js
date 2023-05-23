@@ -2,17 +2,15 @@ import React, {useEffect, useState} from 'react'
 import GroceryItemDetails from './GroceryItemDetails'
 import GroceryEditItem from './GroceryEditItem'
 
-export default function GroceryList({items, deleteItem}) {
+export default function GroceryList({items, deleteItem, editItem}) {
 
+    // editformcomponent will be displayed if isedit = true
     const [isedit, setIsedit] = useState(false)
     const [itemobj, setItemobj] = useState({})
 
-    useEffect = (()=>{
-        console.log('use effect')
-    },[itemobj]);
-    
+
     const handleEdit =(item)=>{
-        console.log('handle edit' ,item);
+       // console.log('handle edit' ,item);
         let newitem = {...item}
         setItemobj(newitem)
         setIsedit(true)
@@ -61,7 +59,7 @@ export default function GroceryList({items, deleteItem}) {
             )
         }
        <hr/>
-       {isedit && <GroceryEditItem itemobj={itemobj} cancel={cancel}/>}
+       {isedit && <GroceryEditItem itemobj={itemobj} cancel={cancel} editItem={editItem}/>}
     </div>
   )
 }
