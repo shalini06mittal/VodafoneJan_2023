@@ -27,9 +27,10 @@ function App() {
   return (
     <>
       <div className="App">
-          <Header title="Grocery List"/>
+          <Header title="Fill Your Basket"/>
       </div>
       <div className='container'>
+        <Header title="List Of Available Items"/>
       {items.length > 0 && 
             items.map(item => (
               <div key={item.id} className='row mb-5'>
