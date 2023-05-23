@@ -46,12 +46,15 @@ function App() {
     setItems(newItems);
   }
   
+  const editItem =()=>{
+    
+  }
   return (
     <div>
       <h2 className="App">Grocery List</h2>
       <div className="container">
         <GroceryForm addItem={addItem}/>
-        <GroceryList items={items} deleteItem={deleteItem}/>
+        <GroceryList items={items} deleteItem={deleteItem} editItem={editItem}/>
       </div>
     </div>
   );

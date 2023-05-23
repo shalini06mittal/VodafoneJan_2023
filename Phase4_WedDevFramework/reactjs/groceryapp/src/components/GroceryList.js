@@ -1,9 +1,26 @@
-import React from 'react'
+import React, {useEffect, useState} from 'react'
 import GroceryItemDetails from './GroceryItemDetails'
-
+import GroceryEditItem from './GroceryEditItem'
 
 export default function GroceryList({items, deleteItem}) {
 
+    const [isedit, setIsedit] = useState(false)
+    const [itemobj, setItemobj] = useState({})
+
+    useEffect = (()=>{
+        console.log('use effect')
+    },[itemobj]);
+    
+    const handleEdit =(item)=>{
+        console.log('handle edit' ,item);
+        let newitem = {...item}
+        setItemobj(newitem)
+        setIsedit(true)
+    }
+    
+    const cancel=()=>{
+        setIsedit(false)
+    }
   return (
     <div>
         <div className='row'>
@@ -39,11 +56,12 @@ export default function GroceryList({items, deleteItem}) {
         } */}
         {
             items.map(item => <GroceryItemDetails 
-                key={item.id}  deleteItem = {deleteItem}
+                key={item.id}  deleteItem = {deleteItem} handleEdit={handleEdit}
                 item={item}/>                       
             )
         }
-       
+       <hr/>
+       {isedit && <GroceryEditItem itemobj={itemobj} cancel={cancel}/>}
     </div>
   )
 }
