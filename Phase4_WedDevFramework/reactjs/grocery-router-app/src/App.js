@@ -9,6 +9,7 @@ import About from './components/About';
 import Login from './components/Login';
 import Register from './components/Register';
 import Contact from './components/Contact';
+import { getItems } from './reatapi/itemsapi';
 /*
 {
       "itemname": "Cookies",
@@ -27,6 +28,7 @@ import Contact from './components/Contact';
 5. Update NavBar.js for Link tag instead of <a>
 6. Update GroceryList.js
   */
+
 const initialState = []
 
 function App() {
@@ -35,9 +37,7 @@ function App() {
 
   useEffect(()=>{
     console.log('use effect')
-    fetch('http://localhost:3000/items')
-    .then(res => res.json())
-    .then(data => setitems(data))
+    getItems().then(data => setitems(data))
   },[])
 
   return (

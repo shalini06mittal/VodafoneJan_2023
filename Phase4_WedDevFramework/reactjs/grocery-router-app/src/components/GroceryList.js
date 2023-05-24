@@ -8,7 +8,7 @@ export default function GroceryList({items}) {
       <Header>
               <h3>List Of Available Items</h3>
       </Header>
-      {items.length > 0 && 
+      {items && items.length > 0 && 
             items.map(item => (
               <div key={item.id} className='row mb-5'>
                 <div>Name : {item.itemname}</div>
