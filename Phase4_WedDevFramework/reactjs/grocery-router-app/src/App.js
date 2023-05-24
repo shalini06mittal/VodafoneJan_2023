@@ -3,6 +3,12 @@ import './App.css';
 import Header from './components/Header';
 import { useEffect, useState } from 'react';
 import NavBar from './components/NavBar';
+import {BrowserRouter, Route, Routes} from 'react-router-dom';
+import GroceryList from './components/GroceryList';
+import About from './components/About';
+import Login from './components/Login';
+import Register from './components/Register';
+import Contact from './components/Contact';
 /*
 {
       "itemname": "Cookies",
@@ -12,6 +18,15 @@ import NavBar from './components/NavBar';
       "id": 4
     }
     */
+
+  /*
+1. npm i react-router-dom => execute from the project folder [grocery-router-app]
+2. import {BrowserRouter, Route, Routes} from 'react-router-dom'; in App.js
+3. Wrap the entire content wiihtin App.js in BrowserRouter
+4. Create Routes in App.js
+5. Update NavBar.js for Link tag instead of <a>
+6. Update GroceryList.js
+  */
 const initialState = []
 
 function App() {
@@ -26,29 +41,21 @@ function App() {
   },[])
 
   return (
-    <>
+    <BrowserRouter>
     <NavBar/>
       <div className="App">
           <Header>
               <h1>Fill Your Basket</h1>
             </Header> 
       </div>
-      <div className='container'>
-      <Header>
-              <h3>List Of Available Items</h3>
-            </Header>
-      {items.length > 0 && 
-            items.map(item => (
-              <div key={item.id} className='row mb-5'>
-                <div>Name : {item.itemname}</div>
-                <div>Price : {item.price}</div>
-                <div>Description : {item.description}</div>
-                <div><img src={item.imageurl} width="200" className='img-fluid'/></div>
-              </div>
-            ))
-          }
-      </div>
-    </>
+      <Routes>
+          <Route path='' element={<GroceryList items={items}/>}></Route>
+          <Route path='/about' element={<About/>}></Route>
+          <Route path='/contact' element={<Contact/>}></Route>
+          <Route path='/login' element={<Login/>}></Route>
+          <Route path='/register' element={<Register/>}></Route>
+      </Routes>
+    </BrowserRouter>
   );
 }
 
