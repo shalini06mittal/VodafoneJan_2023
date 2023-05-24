@@ -1,9 +1,10 @@
 import React from 'react'
 
-export default function Header({title}) {
+export default function Header(props) {
+  console.log(props)
   return (
     <div>
-        <h1>{title}</h1>
+        {props.children}
     </div>
   )
 }

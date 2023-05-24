@@ -2,6 +2,7 @@ import logo from './logo.svg';
 import './App.css';
 import Header from './components/Header';
 import { useEffect, useState } from 'react';
+import NavBar from './components/NavBar';
 /*
 {
       "itemname": "Cookies",
@@ -26,11 +27,16 @@ function App() {
 
   return (
     <>
+    <NavBar/>
       <div className="App">
-          <Header title="Fill Your Basket"/>
+          <Header>
+              <h1>Fill Your Basket</h1>
+            </Header> 
       </div>
       <div className='container'>
-        <Header title="List Of Available Items"/>
+      <Header>
+              <h3>List Of Available Items</h3>
+            </Header>
       {items.length > 0 && 
             items.map(item => (
               <div key={item.id} className='row mb-5'>

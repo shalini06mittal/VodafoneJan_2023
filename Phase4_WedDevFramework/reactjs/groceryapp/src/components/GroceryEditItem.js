@@ -1,6 +1,8 @@
 import React , {useState, useEffect} from 'react'
 
-export default function GroceryEditItem({itemobj, cancel, hideEdit}) {
+export default function GroceryEditItem(props) {
+
+    let {itemobj, cancel, hideEdit} = props;
 
     const [item, setItem] = useState(itemobj);
 
