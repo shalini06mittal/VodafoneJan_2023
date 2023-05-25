@@ -1,9 +1,14 @@
-import React, { useEffect } from "react";
+import React, { useEffect , useState} from "react";
 import { Link } from "react-router-dom";
 import { isUserLoggedIn, logout } from "../reatapi/userapi";
 
 export default function NavBar() {
 
+  const [userData, setUserData] = useState();
+  useEffect(() => {
+    setUserData(sessionStorage.getItem('id'));
+    console.log('navbar use effect', userData)
+  }, [sessionStorage]);
 
   return (
     <div>
