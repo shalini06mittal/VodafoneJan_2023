@@ -34,6 +34,12 @@
       "username": "priyanka",
       "password": "priy123",
       "email": "priyanka@gmail.com"
+    },
+    {
+      "username": "test",
+      "password": "test123",
+      "email": "test@gmail.com",
+      "id": "xakcOwL"
     }
   ]
 }

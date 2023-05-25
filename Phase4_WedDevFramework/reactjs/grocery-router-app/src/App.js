@@ -35,7 +35,7 @@ const initialState = []
 function App() {
 
   const [items, setitems] = useState(initialState)
-
+  const [status, setStatus] = useState(false)
   useEffect(()=>{
     console.log('use effect')
     getItems().then(data => {
@@ -46,7 +46,7 @@ function App() {
 
   return (
     <BrowserRouter>
-    <NavBar/>
+    <NavBar status={status}/>
       <div className="App">
           <Header>
               <h1>Fill Your Basket</h1>
@@ -58,7 +58,7 @@ function App() {
           <Route path='/:id' element={<GroceryItem/>}></Route>
           <Route path='/about' element={<About/>}></Route>
           <Route path='/contact' element={<Contact/>}></Route>
-          <Route path='/login' element={<Login/>}></Route>
+          <Route path='/login' element={<Login status={()=>setStatus(!status)}/>}></Route>
           <Route path='/register' element={<Register/>}></Route>
       </Routes>
     </BrowserRouter>

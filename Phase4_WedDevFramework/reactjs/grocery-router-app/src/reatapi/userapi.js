@@ -26,6 +26,7 @@ export async function registerUser(user)
     })
     let data = await response.json()
     console.log(data);
+    return data;
 }
 export function isUserLoggedIn()
 {

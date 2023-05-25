@@ -2,7 +2,7 @@ import React, { useEffect , useState} from "react";
 import { Link } from "react-router-dom";
 import { isUserLoggedIn, logout } from "../reatapi/userapi";
 
-export default function NavBar() {
+export default function NavBar({status}) {
 
   const [userData, setUserData] = useState();
   useEffect(() => {
@@ -41,7 +41,7 @@ export default function NavBar() {
                 </Link>
               </li>
               {
-                !isUserLoggedIn() && 
+                !status && 
               <li className="nav-item">
                 <Link className="nav-link" to="/login">
                   Login 
@@ -49,7 +49,7 @@ export default function NavBar() {
               </li>
               }
               {
-                isUserLoggedIn() && 
+                status && 
               <li className="nav-item">
                 <a className="nav-link" href="/" onClick={logout}>
                   Logout 
@@ -57,7 +57,7 @@ export default function NavBar() {
               </li>
           }
               {
-                !isUserLoggedIn() && 
+                !status && 
               <li className="nav-item">
                 <Link className="nav-link" to="/register">
                   Register 
