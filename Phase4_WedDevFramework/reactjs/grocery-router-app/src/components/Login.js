@@ -1,6 +1,6 @@
 import React,{useState} from 'react'
-import { validateUser } from '../reatapi/userapi';
-
+import { success, validateUser } from '../reatapi/userapi';
+import {useNavigate} from 'react-router-dom';
 const initialState = {
   "id":"1",
   "password":"shalini123"
@@ -8,20 +8,30 @@ const initialState = {
 export default function Login() {
 
   const [user, setuser] = useState(initialState)
+  const [error, setError] = useState()
+  let navigate = useNavigate()
 
   const handleSubmit = (event)=>{
     event.preventDefault();
     validateUser(user.id, user.password)
-    .then(loggeduser => {
-      console.log('success')
+    .then(response => {
+      if(response === success){
+        console.log("store in storage")
+        sessionStorage.setItem('id', user.id);
+        navigate('/')
+    }
     } )
-    .catch(err=>console.log("failure"))
+    .catch(err=>{
+      console.log("failure")
+      setError('Invalid Credentials');
+    })
 
   }
   return (
     <div className="container">
 		
 		<h1>Login</h1>
+    <p style={{color:'red'}}>{error && error}</p>
 		<form>
 		<div className="mb-3">
 			<label htmlFor="formGroupExampleInput2" className="form-label">User Id

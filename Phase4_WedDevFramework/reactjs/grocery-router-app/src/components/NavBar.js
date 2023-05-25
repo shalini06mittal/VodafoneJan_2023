@@ -1,7 +1,10 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
+import { isUserLoggedIn } from "../reatapi/userapi";
 
 export default function NavBar() {
+
+  
   return (
     <div>
       <nav className="navbar navbar-expand-lg navbar-light bg-light">
@@ -32,21 +35,30 @@ export default function NavBar() {
                   About 
                 </Link>
               </li>
+              {
+                !isUserLoggedIn() && 
               <li className="nav-item">
                 <Link className="nav-link" to="/login">
                   Login 
                 </Link>
               </li>
+              }
+              {
+                isUserLoggedIn() && 
               <li className="nav-item">
                 <Link className="nav-link" to="/logout">
                   Logout 
                 </Link>
               </li>
+          }
+              {
+                !isUserLoggedIn() && 
               <li className="nav-item">
                 <Link className="nav-link" to="/register">
                   Register 
                 </Link>
               </li>
+          }
               <li className="nav-item">
                 <Link className="nav-link" to="/contact">
                   Contact 
