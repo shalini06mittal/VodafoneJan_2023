@@ -9,6 +9,7 @@ import About from './components/About';
 import Login from './components/Login';
 import Register from './components/Register';
 import Contact from './components/Contact';
+import GroceryItem from './components/GroceryItem';
 import { getItems } from './reatapi/itemsapi';
 /*
 {
@@ -37,7 +38,10 @@ function App() {
 
   useEffect(()=>{
     console.log('use effect')
-    getItems().then(data => setitems(data))
+    getItems().then(data => {
+     console.log(data)
+      setitems(data)
+    })
   },[])
 
   return (
@@ -50,6 +54,8 @@ function App() {
       </div>
       <Routes>
           <Route path='' element={<GroceryList items={items}/>}></Route>
+          {/* http://localhost:3000/1 */}
+          <Route path='/:id' element={<GroceryItem/>}></Route>
           <Route path='/about' element={<About/>}></Route>
           <Route path='/contact' element={<Contact/>}></Route>
           <Route path='/login' element={<Login/>}></Route>

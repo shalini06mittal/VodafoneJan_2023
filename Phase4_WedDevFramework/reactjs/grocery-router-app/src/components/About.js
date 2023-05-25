@@ -1,5 +1,5 @@
 import React from "react";
-
+//<Link to={`/${item.id}`}>{item.itemname}</Link>
 export default function About() {
   return (
     <div className="container">

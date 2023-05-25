@@ -1,30 +1,29 @@
-import React, {useState} from "react";
-import GroceryEditItem from "./GroceryEditItem";
+import React, { useState } from "react";
+import { useParams } from "react-router-dom";
+import { getItemById } from "../reatapi/itemsapi";
 
 export default function GroceryItem() {
-  
-    let item= undefined
-
-  // const [isedit, setIsedit] = useState(false)
-
+  let { id } = useParams();
+  id = Number(id);
+  let item = getItemById(id);
   return (
-    <div>
-        { item !== undefined ? (
-                    <div className="row">
-                        <div className="col-md-3">
-                             <p>{item.name}</p>
-                        </div>
-                        <div className="col-md-3">
-                             <p>{item.price}</p>
-                        </div>
-                        <div className="col-md-3">
-                            <p>{item.description}</p>
-                        </div>
-                    </div>
-                )
-                : <div>No item yet</div>
-        }
-    
+    <div className="container">
+      {item !== undefined ? (
+        <div className="row mt-5">
+          <div className="col-md-6">
+            <p>
+              <img src={item.imageurl} className="img-fluid" />
+            </p>
+          </div>
+          <div className="col-md-6">
+            <p>{item.itemname}</p>
+            <p>{item.price}</p>
+            <p>{item.description}</p>
+          </div>
+        </div>
+      ) : (
+        <div>No item yet</div>
+      )}
       {/* <div className="col-md-3">
             
             <button className="btn btn-warning" onClick={()=>props.handleEdit(item)}>Edit</button>

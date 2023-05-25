@@ -13,8 +13,10 @@ export async function getItems(){
     
 }
 
-export function getItemById(id){
+export  function getItemById(id){
     return items.find(item => item.id === id)
+    // let response = await fetch(`${url}/items/${id}`)
+    // return await response.json()
 }
 
 // export default {
