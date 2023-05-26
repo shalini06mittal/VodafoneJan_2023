@@ -1,15 +1,17 @@
 import React from "react";
-import { useParams } from "react-router-dom";
+import { useParams, createSearchParams, useNavigate} from "react-router-dom";
 import { getItemById } from "../reatapi/itemsapi";
 
 export default function GroceryItem() {
   let { id } = useParams();
   id = Number(id);
   let item = getItemById(id);
-
+  let navigate = useNavigate()
   return (
     <div className="container mt-3">
-    
+      <button className="btn btn-warning" onClick={()=>
+                                                navigate({pathname:'/', search:createSearchParams({id:id}).toString()})
+                                              }>Go Back</button>
       {item !== undefined ? (
         <div className="row mt-5">
           <div className="col-md-6">

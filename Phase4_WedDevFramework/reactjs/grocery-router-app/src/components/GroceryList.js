@@ -8,7 +8,8 @@ export default function GroceryList({items}) {
 
 
   let [searchParams] = useSearchParams()
-  console.log('id', searchParams.get('id'))
+  let id = Number(searchParams.get('id'))
+  console.log('id', id)
   
   useEffect(()=>{
 
@@ -24,7 +25,11 @@ export default function GroceryList({items}) {
       items && items.length > 0 && 
             items.map(item =>(  
               <div key={item.id} className='row mb-2'>
-              <div>Name : <Link to={`${item.id}`}>{item.itemname}</Link></div>
+              <div>Name : <Link style={
+                {textDecoration:'none', 
+                color:'crimson',
+                borderBottom : item.id === id ? '2px solid blue': ''
+            }} to={`${item.id}`}>{item.itemname}</Link></div>
             </div>
             ))
       }
