@@ -1,11 +1,11 @@
 import React,{useState} from 'react'
-import { success, validateUser } from '../reatapi/userapi';
+import { getUsername, success, validateUser } from '../reatapi/userapi';
 import {useNavigate, redirect} from 'react-router-dom';
 const initialState = {
   "id":"1",
   "password":"shalini123"
 }
-export default function Login({setStatus}) {
+export default function Login({setStatus, setusername}) {
 
   const [user, setuser] = useState(initialState)
   const [error, setError] = useState()
@@ -19,6 +19,7 @@ export default function Login({setStatus}) {
         console.log("store in storage")
         sessionStorage.setItem('id', user.id);
         setStatus(true)
+        setusername(getUsername())
          navigate('/')
         
     }

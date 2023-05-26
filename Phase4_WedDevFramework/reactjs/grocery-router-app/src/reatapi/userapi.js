@@ -2,7 +2,7 @@ let url = 'http://localhost:3000'
 
 export let success = "SUCCESS";
 export let failure = "FAILURE";
-
+let username =  ''
 export async function validateUser(id, password)
 {
     let response = await fetch(`${url}/users/${id}`)
@@ -10,11 +10,18 @@ export async function validateUser(id, password)
     console.log(loginuser)
     if(Object.keys(loginuser).length === 0)
         return Promise.reject(failure)
-    if(password === loginuser.password)
+    if(password === loginuser.password){
+        username = loginuser.username
         return Promise.resolve(success);
+    }
+       
     return Promise.reject(failure)
 }
 
+export  function getUsername()
+{
+    return username;
+}
 export async function registerUser(user)
 {
     let response = await fetch(`${url}/users`,{
@@ -38,3 +45,8 @@ export function logout()
     sessionStorage.removeItem('id')
 }
 
+export async function getUserByUsername(username){
+    let response = await fetch(`${url}/users?username=${username}`)
+    let loginuser = await response.json();
+    return loginuser[0];
+}

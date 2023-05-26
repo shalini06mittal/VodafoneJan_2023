@@ -11,6 +11,7 @@ import Register from './components/Register';
 import Contact from './components/Contact';
 import GroceryItem from './components/GroceryItem';
 import { getItems } from './reatapi/itemsapi';
+import Profile from './components/Profile';
 /*
 {
       "itemname": "Cookies",
@@ -43,6 +44,7 @@ function App() {
 
   const [items, setitems] = useState(initialState)
   const [status, setStatus] = useState(false)
+  const [username, setUsername] = useState()
 
   useEffect(()=>{
    // console.log('use effect')
@@ -54,7 +56,7 @@ function App() {
 
   return (
     <BrowserRouter>
-    <NavBar status={status}/>
+    <NavBar status={status} username={username}/>
       <div className="App">
           <Header>
               <h1>Fill Your Basket</h1>
@@ -66,8 +68,9 @@ function App() {
           <Route path='/:id' element={<GroceryItem/>}></Route>
           <Route path='/about' element={<About/>}></Route>
           <Route path='/contact' element={<Contact/>}></Route>
-          <Route path='/login' element={<Login setStatus ={setStatus}/>}></Route>
+          <Route path='/login' element={<Login setStatus ={setStatus} setusername = {setUsername}/>}></Route>
           <Route path='/register' element={<Register/>}></Route>
+          <Route path='/profile' element={<Profile username={username}/>}></Route>
       </Routes>
     </BrowserRouter>
   );

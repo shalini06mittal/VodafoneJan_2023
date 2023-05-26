@@ -2,7 +2,7 @@ import React, { useEffect , useState} from "react";
 import { Link, NavLink } from "react-router-dom";
 import { isUserLoggedIn, logout } from "../reatapi/userapi";
 import './NavBar.css';
-export default function NavBar({status}) {
+export default function NavBar({status, username}) {
 
   return (
     <div>
@@ -63,9 +63,14 @@ export default function NavBar({status}) {
                   Contact 
                 </NavLink>
               </li>
-              
             </ul>
           </div>
+          {
+                status && 
+          <div><NavLink className="nav-link" to="/profile">
+                  {username} 
+                </NavLink></div>
+        }
         </div>
       </nav>
     </div>
