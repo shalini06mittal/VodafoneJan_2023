@@ -8,7 +8,7 @@ export async function getItems(){
 
     let response = await fetch(`${url}/items`)
     items = await response.json()
-    console.log(items)
+   // console.log(items)
     return items;
     
 }

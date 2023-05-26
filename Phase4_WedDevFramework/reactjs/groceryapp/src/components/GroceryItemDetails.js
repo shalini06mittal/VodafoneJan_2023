@@ -13,7 +13,7 @@ export default function GroceryItemDetails(props) {
         <p>{item.name}</p>
       </div>
       <div className="col-md-3">
-        <p>{item.price}</p>
+        <p>{item.price}/-</p>
       </div>
       <div className="col-md-3">
         <p>{item.description}</p>

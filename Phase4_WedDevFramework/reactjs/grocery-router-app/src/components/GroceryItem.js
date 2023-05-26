@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { useParams } from "react-router-dom";
 import { getItemById } from "../reatapi/itemsapi";
 
@@ -6,8 +6,10 @@ export default function GroceryItem() {
   let { id } = useParams();
   id = Number(id);
   let item = getItemById(id);
+
   return (
-    <div className="container">
+    <div className="container mt-3">
+    
       {item !== undefined ? (
         <div className="row mt-5">
           <div className="col-md-6">
@@ -17,7 +19,7 @@ export default function GroceryItem() {
           </div>
           <div className="col-md-6">
             <p>{item.itemname}</p>
-            <p>{item.price}</p>
+            <p>{item.price}/-</p>
             <p>{item.description}</p>
           </div>
         </div>

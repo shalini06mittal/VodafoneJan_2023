@@ -5,7 +5,7 @@ const initialState = {
   "id":"1",
   "password":"shalini123"
 }
-export default function Login({status}) {
+export default function Login({setStatus}) {
 
   const [user, setuser] = useState(initialState)
   const [error, setError] = useState()
@@ -18,7 +18,7 @@ export default function Login({status}) {
       if(response === success){
         console.log("store in storage")
         sessionStorage.setItem('id', user.id);
-        status()
+        setStatus(true)
          navigate('/')
         
     }
@@ -26,6 +26,7 @@ export default function Login({status}) {
     .catch(err=>{
       console.log("failure")
       setError('Invalid Credentials');
+      setStatus(false)
     })
 
   }

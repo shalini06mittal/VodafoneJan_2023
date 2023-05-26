@@ -8,7 +8,7 @@ export async function validateUser(id, password)
     let response = await fetch(`${url}/users/${id}`)
     let loginuser = await response.json();
     console.log(loginuser)
-    if(Object.keys(loginuser).length == 0)
+    if(Object.keys(loginuser).length === 0)
         return Promise.reject(failure)
     if(password === loginuser.password)
         return Promise.resolve(success);

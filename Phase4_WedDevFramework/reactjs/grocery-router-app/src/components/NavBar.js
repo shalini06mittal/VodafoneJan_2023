@@ -1,14 +1,8 @@
 import React, { useEffect , useState} from "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { isUserLoggedIn, logout } from "../reatapi/userapi";
-
+import './NavBar.css';
 export default function NavBar({status}) {
-
-  const [userData, setUserData] = useState();
-  useEffect(() => {
-    setUserData(sessionStorage.getItem('id'));
-    console.log('navbar use effect', userData)
-  }, [sessionStorage]);
 
   return (
     <div>
@@ -31,21 +25,21 @@ export default function NavBar({status}) {
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
               <li className="nav-item">
-                <Link className="nav-link active" aria-current="page" to="">
+                <NavLink className="nav-link" aria-current="page" to="">
                   Home
-                </Link>
+                </NavLink>
               </li>
               <li className="nav-item">
-                <Link className="nav-link" to="/about">
+                <NavLink className="nav-link" to="/about">
                   About 
-                </Link>
+                </NavLink>
               </li>
               {
                 !status && 
               <li className="nav-item">
-                <Link className="nav-link" to="/login">
+                <NavLink className="nav-link" to="/login">
                   Login 
-                </Link>
+                </NavLink>
               </li>
               }
               {
@@ -59,15 +53,15 @@ export default function NavBar({status}) {
               {
                 !status && 
               <li className="nav-item">
-                <Link className="nav-link" to="/register">
+                <NavLink className="nav-link" to="/register">
                   Register 
-                </Link>
+                </NavLink>
               </li>
           }
               <li className="nav-item">
-                <Link className="nav-link" to="/contact">
+                <NavLink className="nav-link" to="/contact">
                   Contact 
-                </Link>
+                </NavLink>
               </li>
               
             </ul>

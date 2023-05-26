@@ -28,6 +28,13 @@ import { getItems } from './reatapi/itemsapi';
 4. Create Routes in App.js
 5. Update NavBar.js for Link tag instead of <a>
 6. Update GroceryList.js
+
+For Link Update
+1. Add status useState in App.js
+2. pass status to Login and NavBar
+3. Access as props in Login and NavBar
+4. Update conditional rendering in NavBar with status
+5. Login.js within handleSubmit call setStatus props with value as true or fase fro success or failure
   */
 
 const initialState = []
@@ -36,10 +43,11 @@ function App() {
 
   const [items, setitems] = useState(initialState)
   const [status, setStatus] = useState(false)
+
   useEffect(()=>{
-    console.log('use effect')
+   // console.log('use effect')
     getItems().then(data => {
-     console.log(data)
+     //console.log(data)
       setitems(data)
     })
   },[])
@@ -58,7 +66,7 @@ function App() {
           <Route path='/:id' element={<GroceryItem/>}></Route>
           <Route path='/about' element={<About/>}></Route>
           <Route path='/contact' element={<Contact/>}></Route>
-          <Route path='/login' element={<Login status={()=>setStatus(!status)}/>}></Route>
+          <Route path='/login' element={<Login setStatus ={setStatus}/>}></Route>
           <Route path='/register' element={<Register/>}></Route>
       </Routes>
     </BrowserRouter>

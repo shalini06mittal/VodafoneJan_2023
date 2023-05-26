@@ -24,22 +24,31 @@
   ],
   "users": [
     {
-      "id": "1",
+      "id": 1,
       "username": "shalini",
       "password": "shalini123",
-      "email": "shalini@gmail.com"
+      "email": "shalini@gmail.com",
+      "role":"user"
     },
     {
-      "id": "2",
+      "id": 2,
       "username": "priyanka",
       "password": "priy123",
-      "email": "priyanka@gmail.com"
+      "email": "priyanka@gmail.com",
+      "role":"user"
     },
     {
       "username": "test",
       "password": "test123",
       "email": "test@gmail.com",
-      "id": "xakcOwL"
+      "id": 3,
+      "role":"user"
+    },
+    {
+      "username": "admin",
+      "password": "admin123",
+      "id": 100,
+      "role":"admin"
     }
   ]
 }
