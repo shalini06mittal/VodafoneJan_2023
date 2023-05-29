@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import CounterControl from '../output/CounterControl'
 import CounterOutput from '../output/CounterOutput'
 import { connect } from 'react-redux'
-import { increment } from '../../reducers/counterreducer'
+import { increment, decrement, addByValue, subByValue } from '../../reducers/counterreducer'
 
 class Counter extends Component {
     // state={
@@ -30,9 +30,9 @@ class Counter extends Component {
       <div>
           <CounterOutput value={this.props.count}/>
           <CounterControl label='Increment' clicked={()=>this.props.onIncrement()}/>
-          <CounterControl label='Decrement' clicked={()=>this.handleCounterChange('dec')}/>
-          <CounterControl label='Add 5' clicked={()=>this.handleCounterChange('add',5)}/>
-          <CounterControl label='Sub 3' clicked={()=>this.handleCounterChange('sub',3)}/>
+          <CounterControl label='Decrement' clicked={()=>this.props.onDecrement()}/>
+          <CounterControl label='Add 5' clicked={()=>this.props.onAddByValue(5)}/>
+          <CounterControl label='Sub 3' clicked={()=>this.props.onSubByValue(3)}/>
       </div>
     )
   }
@@ -43,7 +43,10 @@ const mapStateOfStoreToProps = (state)=>{
 }
 const mapDispatchActionsToProps = (dispatch)=>{
   return {  
-    onIncrement : () => dispatch(increment())
+    onIncrement : () => dispatch(increment()),
+    onDecrement : () => dispatch(decrement()),
+    onAddByValue : (data) => dispatch(addByValue(data)),
+    onSubByValue : (data) => dispatch(subByValue(data))
   }
 }
 export default connect(mapStateOfStoreToProps, mapDispatchActionsToProps)(Counter);
