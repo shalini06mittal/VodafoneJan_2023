@@ -15,9 +15,10 @@ export default function Login({setStatus, setusername}) {
     event.preventDefault();
     validateUser(user.id, user.password)
     .then(response => {
-      if(response === success){
+      if(response !== undefined){
         console.log("store in storage")
         sessionStorage.setItem('id', user.id);
+        sessionStorage.setItem('username', response.username);
         setStatus(true)
         setusername(getUsername())
          navigate('/')

@@ -11,8 +11,7 @@ export async function validateUser(id, password)
     if(Object.keys(loginuser).length === 0)
         return Promise.reject(failure)
     if(password === loginuser.password){
-        username = loginuser.username
-        return Promise.resolve(success);
+        return Promise.resolve(loginuser);
     }
        
     return Promise.reject(failure)
@@ -20,7 +19,7 @@ export async function validateUser(id, password)
 
 export  function getUsername()
 {
-    return username;
+    return sessionStorage.getItem('username');
 }
 export async function registerUser(user)
 {
@@ -43,6 +42,7 @@ export function isUserLoggedIn()
 export function logout()
 {
     sessionStorage.removeItem('id')
+    sessionStorage.removeItem('username')
 }
 
 export async function getUserByUsername(username){

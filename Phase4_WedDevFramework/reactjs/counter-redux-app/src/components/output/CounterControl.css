@@ -1,0 +1,14 @@
+.control{
+    width: 150px;
+    padding: 20px;
+    margin: 16px;
+    font-weight: bold;
+    text-align: center;
+    cursor: pointer;
+    display: inline-block;
+    border:1px solid #eee;
+    box-shadow: 0 2px 2px #ccc;
+}
+.control:hover{
+    background-color: #eee;
+}
