@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import CounterControl from '../output/CounterControl'
 import CounterOutput from '../output/CounterOutput'
 import { useDispatch, useSelector } from 'react-redux'
-import { addByValue, decrement, increment, subByValue } from '../../reducers/counterreducer'
+import { addByValue, decrement, increment, subByValue , incrementAsync} from '../../reducers/counterreducer'
 
 export default function CounterFunc() {
     const [value, setValue] = useState(0)
@@ -26,6 +26,7 @@ export default function CounterFunc() {
               value={value} onChange={(e)=>setValue(Number(e.target.value))}/>
           </div>
           <CounterControl label='Increment' clicked={()=>dispatch(increment())}/>
+          <CounterControl label='Increment Async' clicked={()=>dispatch(incrementAsync())}/>
           <CounterControl label='Decrement'clicked={()=>dispatch(decrement())} />
           <CounterControl label='Add ' clicked={()=>dispatch(addByValue(value))}/>
           <CounterControl label='Sub ' clicked={()=>dispatch(subByValue(value))}/>

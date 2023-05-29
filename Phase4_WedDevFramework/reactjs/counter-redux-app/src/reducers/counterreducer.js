@@ -1,6 +1,13 @@
 import {createSlice} from '@reduxjs/toolkit';
 
 const initialState = { count : 10}
+// thunk or middleware
+export const incrementAsync = ()=>{
+    return (dispatch)=> setTimeout(() => {
+        console.log('times up')
+        dispatch(increment())
+    }, 5000); 
+}
 
 const counter = createSlice({
     name:'counter',
@@ -20,8 +27,8 @@ const counter = createSlice({
         }
     }
 })
-console.log(counter.actions)
-console.log(counter)
-console.log(counter.reducer)
+// console.log(counter.actions)
+// console.log(counter)
+// console.log(counter.reducer)
 export let {increment, decrement, subByValue, addByValue} = counter.actions
 export default counter.reducer;
