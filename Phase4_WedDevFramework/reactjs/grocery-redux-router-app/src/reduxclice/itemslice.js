@@ -6,8 +6,9 @@ const initialState = {
 }
 
 export const fetchItems = createAsyncThunk('fetch/Items',async()=>{
-    let response = await fetch('http://localhost:3000/items')
+        let response = await fetch('http://localhost:3000/items')
     return response.json()
+    
 })
 const itemslice = createSlice({
     name:"items",
@@ -15,6 +16,9 @@ const itemslice = createSlice({
     reducers:{
     },
     extraReducers(builder){
+        builder.addCase(fetchItems.pending, (state, action)=>{
+            state.status='loading'
+        })
         builder.addCase(fetchItems.fulfilled, (state, action)=>{
             state.status = 'success';
             state.items = state.items.concat(action.payload)
