@@ -1,9 +1,14 @@
 import React, { useEffect , useState} from "react";
 import { Link, NavLink } from "react-router-dom";
-
+import { useDispatch, useSelector } from 'react-redux';
 import './NavBar.css';
+import { logoutUser } from "../reduxclice/userslice";
 export default function NavBar() {
 
+  const isLoggedIn = useSelector((state)=> state.userreducer.isLoggedIn);
+  const dispatch = useDispatch();
+  const username = useSelector((state)=> state.userreducer.username);
+  //console.log('navbar username', username)
   return (
     <div>
       <nav className="navbar navbar-expand-lg navbar-light bg-light">
@@ -34,8 +39,8 @@ export default function NavBar() {
                   About 
                 </NavLink>
               </li>
-              {/* {
-                !status && 
+              {
+                !isLoggedIn && 
               <li className="nav-item">
                 <NavLink className="nav-link" to="/login">
                   Login 
@@ -43,21 +48,21 @@ export default function NavBar() {
               </li>
               }
               {
-                status && 
+                isLoggedIn && 
               <li className="nav-item">
-                <a className="nav-link" href="/" onClick={logout}>
+                <a className="nav-link" href="/" onClick={()=>dispatch(logoutUser())}>
                   Logout 
                 </a>
               </li>
           }
               {
-                !status && 
+                !isLoggedIn && 
               <li className="nav-item">
                 <NavLink className="nav-link" to="/register">
                   Register 
                 </NavLink>
               </li>
-          } */}
+          }
               <li className="nav-item">
                 <NavLink className="nav-link" to="/contact">
                   Contact 
@@ -65,12 +70,20 @@ export default function NavBar() {
               </li>
             </ul>
           </div>
-          {/* {
-                status && 
-          <div><NavLink className="nav-link" to="/profile">
+          {
+                isLoggedIn && 
+        <div style={{marginRight:'10px', backgroundColor:'crimson', color:'white', padding:'5px'}}>
+          <NavLink className="nav-link" to="/cart">
+                  CART <button className="badge">{1}</button>
+                </NavLink>
+          </div>        
+      }
+          {
+                isLoggedIn && 
+          <div><NavLink className="nav-link" to={`/profile/${username}`}>
                   {username} 
                 </NavLink></div>
-        } */}
+        }
         </div>
       </nav>
     </div>

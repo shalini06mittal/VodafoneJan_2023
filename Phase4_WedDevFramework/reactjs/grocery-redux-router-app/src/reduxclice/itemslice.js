@@ -28,5 +28,5 @@ const itemslice = createSlice({
         })
     }
 })
-console.log(itemslice.reducer)
+//console.log(itemslice.reducer)
 export default itemslice.reducer;

@@ -12,7 +12,7 @@ export default function GroceryList() {
   const status = state.status;
   const items = state.items;
 
-  console.log(state)
+  //console.log(state)
   useEffect(()=>{
     if(status==='idle'){
         dispatch(fetchItems());

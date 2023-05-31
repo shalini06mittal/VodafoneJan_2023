@@ -1,0 +1,10 @@
+a.active{
+    color:crimson !important;
+    border-bottom: 1px solid crimson;
+}
+button.badge {
+    background-color: #fff;
+    border: none;
+    color: #f04040;
+    width: 1.5rem;
+  }

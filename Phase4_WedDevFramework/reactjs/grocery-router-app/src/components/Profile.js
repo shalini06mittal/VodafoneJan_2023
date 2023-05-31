@@ -5,9 +5,10 @@ import { Link, Navigate, Outlet } from 'react-router-dom'
 export default function Profile({username}) {
 
     const [userprofile, setuserprofile] = useState()
-
-   
+    
+    
     useEffect(()=>{
+
         console.log(userprofile)
         getUserByUsername(getUsername())
         .then(profile => setuserprofile(profile))

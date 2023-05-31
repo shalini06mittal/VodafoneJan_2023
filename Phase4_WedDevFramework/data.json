@@ -24,31 +24,58 @@
   ],
   "users": [
     {
+      "username": "admin",
+      "password": "admin123",
       "id": 1,
-      "username": "shalini",
-      "password": "shalini123",
-      "email": "shalini@gmail.com",
-      "role":"user"
+      "role": "admin"
     },
     {
       "id": 2,
+      "username": "shalini",
+      "password": "shalini123",
+      "email": "shalini@gmail.com",
+      "role": "user"
+    },
+    {
+      "id": 3,
       "username": "priyanka",
       "password": "priy123",
       "email": "priyanka@gmail.com",
-      "role":"user"
+      "role": "user"
     },
     {
       "username": "test",
       "password": "test123",
       "email": "test@gmail.com",
-      "id": 3,
-      "role":"user"
+      "id": 4,
+      "role": "user"
     },
     {
-      "username": "admin",
-      "password": "admin123",
-      "id": 100,
-      "role":"admin"
+      "username": "denisa",
+      "password": "den123",
+      "email": "denisa@gmail.com",
+      "id": 5
+    },
+    {
+      "username": "michael",
+      "password": "mic123",
+      "email": "michael@gmail.com",
+      "role": "user",
+      "id": 6
+    },
+    {
+      "username": "abc",
+      "password": "abc123",
+      "email": "abc@gmail.com",
+      "role": "user",
+      "id": 7
+    },
+    {
+      "username": "aa",
+      "password": "aa",
+      "email": "aa@g.c",
+      "role": "user",
+      "id": 8
     }
   ]
 }
