@@ -1,0 +1,8 @@
+button.add {
+    background-color: #49cb40;
+    width: 1.5rem;
+  }
+  button.remove {
+    background-color: #ff2f29;
+    width: 1.5rem;
+  }

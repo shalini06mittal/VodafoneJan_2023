@@ -77,5 +77,20 @@
       "role": "user",
       "id": 8
     }
+  ],
+  "orders":[
+    {
+      "id":1,
+      "username":"shalini",
+      "items":[
+        {
+          "itemid":1,
+          "qty":1,
+          "price":50,
+          "total":50
+        }
+      ]
+     
+    }
   ]
 }

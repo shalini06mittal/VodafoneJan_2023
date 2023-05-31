@@ -1,8 +1,21 @@
-import React from "react";
+import React, { useState } from "react";
 import { useParams, createSearchParams, useNavigate} from "react-router-dom";
+import { onAdd } from "../reduxclice/cartslice";
+import {useDispatch, useSelector} from 'react-redux';
 
 export default function GroceryItem({item}) {
   let navigate = useNavigate()
+  let dispatch = useDispatch();
+  let isLoggedIn = useSelector(state => state.userreducer.isLoggedIn)
+  const onAddToCart = ()=>
+  {
+    if(!isLoggedIn) {
+      alert('Please lgin')
+      navigate('/login')
+    }
+    else
+    dispatch(onAdd(item))
+  }
   return (
     <div className="container mt-3">
       {/* <button className="btn btn-warning" onClick={()=>
@@ -19,17 +32,18 @@ export default function GroceryItem({item}) {
             <p>{item.itemname}</p>
             <p>{item.price}/-</p>
             <p>{item.description}</p>
+            <div className="">
+            
+        <button className="btn btn-warning" onClick={onAddToCart}>ADD TO CART</button>
+
+        </div>  
           </div>
+          
         </div>
+        
       ) : (
         <div>No item yet</div>
       )}
-      {/* <div className="col-md-3">
-            
-            <button className="btn btn-warning" onClick={()=>props.handleEdit(item)}>Edit</button>
-            &nbsp;&nbsp;
-            <button className="btn btn-warning" onClick={()=>props.deleteItem(item.id)}>Delete</button>
-      </div> */}
     </div>
   );
 }

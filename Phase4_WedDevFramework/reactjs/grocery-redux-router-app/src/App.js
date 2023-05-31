@@ -8,13 +8,9 @@ import Login from './components/Login';
 import Contact from './components/Contact';
 import Profile from './components/Profile';
 import Register from './components/Register';
-/**
- Cart.js => display the cart items if lenth is > 0 else display a message No items added in the cart
- cartslice.js => initialstate{cartitems:[]} , addItem
- GroceryItem.js => add a button for ADD TO CART => call the addItem of cartslice
- */
-function App() {
+import Cart from './components/Cart';
 
+function App() {
   return (
     <BrowserRouter>
     <NavBar/>
@@ -24,6 +20,7 @@ function App() {
           <Route path='/contact' element={<Contact/>}></Route>
           <Route path='/login' element={<Login/>}></Route>
           <Route path='/register' element={<Register/>}></Route>
+          <Route path='/cart' element={<Cart/>}></Route>
           <Route path='/profile/:username' element={<Profile/>}></Route>
       </Routes>
     </BrowserRouter>

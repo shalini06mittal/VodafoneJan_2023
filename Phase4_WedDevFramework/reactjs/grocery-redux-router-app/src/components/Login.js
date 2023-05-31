@@ -7,14 +7,16 @@ const initialState = {
   "password":"shalini123"
 }
 export default function Login({setStatus, setusername}) {
-
+// Below user and error are used internally by Login.js to display the UI
   const [user, setuser] = useState(initialState)
   const [error, setError] = useState()
+  // routes
   let navigate = useNavigate()
 
+  // dispatch us used to call the actions
   let dispatch = useDispatch()
+  // is used to get the current state from the store
   let status = useSelector((state)=> state.userreducer.loginstatus)
-  let username = useSelector((state)=> state.userreducer.username)
 	let registerstatus = useSelector((state)=> state.userreducer.registerstatus)
 	console.log('register status ', registerstatus)
   useEffect(()=>{

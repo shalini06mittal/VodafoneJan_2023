@@ -3,18 +3,21 @@ import { Link, NavLink } from "react-router-dom";
 import { useDispatch, useSelector } from 'react-redux';
 import './NavBar.css';
 import { logoutUser } from "../reduxclice/userslice";
+import { cartitems } from "../reduxclice/cartslice";
 export default function NavBar() {
 
   const isLoggedIn = useSelector((state)=> state.userreducer.isLoggedIn);
   const dispatch = useDispatch();
   const username = useSelector((state)=> state.userreducer.username);
-  //console.log('navbar username', username)
+  const cart = useSelector(cartitems);
+  console.log('navbar username', cart.length)
+  console.log(cart)
   return (
     <div>
       <nav className="navbar navbar-expand-lg navbar-light bg-light">
         <div className="container-fluid">
           <a className="navbar-brand" to="#">
-            Shopaholi
+            TechGatha
           </a>
           <button
             className="navbar-toggler"
@@ -70,13 +73,13 @@ export default function NavBar() {
               </li>
             </ul>
           </div>
+          
           {
-                isLoggedIn && 
-        <div style={{marginRight:'10px', backgroundColor:'crimson', color:'white', padding:'5px'}}>
-          <NavLink className="nav-link" to="/cart">
-                  CART <button className="badge">{1}</button>
-                </NavLink>
-          </div>        
+                isLoggedIn &&
+                <NavLink className="nav-link" to="/cart">
+                            <i className="fa badge fa-lg" style={{color:'crimson'}} 
+                            value={cart.length}>&#xf290;</i>
+                </NavLink>        
       }
           {
                 isLoggedIn && 
