@@ -32,10 +32,10 @@ export default function Cart() {
           <div key={item.id} className="row mb-3">
             <div className="col-4">{item.itemname}</div>
             <div className="col-2">
-              <button onClick={() => onRemoveItem(item)} className="remove">
+              <button onClick={() => onRemoveItem(item)} className="remove text-center">
                 -
               </button>{"     "}
-              <button onClick={() => onAddItem(item)} className="add">
+              <button onClick={() => onAddItem(item)} className="add  text-center">
                 +
               </button>
             </div>
