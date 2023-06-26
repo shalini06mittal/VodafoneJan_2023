@@ -1,53 +1,102 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
+<testng-results ignored="0" total="3" passed="2" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-06-26T14:45:56 IST" name="Default suite" finished-at="2023-06-26T14:45:56 IST" duration-ms="175">
+  <suite started-at="2023-06-26T16:04:33 IST" name="Default suite" finished-at="2023-06-26T16:04:33 IST" duration-ms="225">
     <groups>
     </groups>
-    <test started-at="2023-06-26T14:45:56 IST" name="Default test" finished-at="2023-06-26T14:45:56 IST" duration-ms="175">
-      <class name="com.testng.demo.TestNGDemo.FirstTestCase">
-        <test-method is-config="true" signature="beforeTest()[pri:0, instance:com.testng.demo.TestNGDemo.FirstTestCase@38cee291]" started-at="2023-06-26T14:45:56 IST" name="beforeTest" finished-at="2023-06-26T14:45:56 IST" duration-ms="31" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforeTest -->
-        <test-method is-config="true" signature="beforeClass()[pri:0, instance:com.testng.demo.TestNGDemo.FirstTestCase@38cee291]" started-at="2023-06-26T14:45:56 IST" name="beforeClass" finished-at="2023-06-26T14:45:56 IST" duration-ms="1" status="PASS">
+    <test started-at="2023-06-26T16:04:33 IST" name="Default test" finished-at="2023-06-26T16:04:33 IST" duration-ms="225">
+      <class name="com.testng.demo.TestNGDemo.CalculatorTest">
+        <test-method is-config="true" signature="beforeClass()[pri:0, instance:com.testng.demo.TestNGDemo.CalculatorTest@4686afc2]" started-at="2023-06-26T16:04:33 IST" name="beforeClass" finished-at="2023-06-26T16:04:33 IST" duration-ms="79" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeClass -->
-        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:com.testng.demo.TestNGDemo.FirstTestCase@38cee291]" started-at="2023-06-26T14:45:56 IST" name="beforeMethod" finished-at="2023-06-26T14:45:56 IST" duration-ms="2" status="PASS">
+        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:com.testng.demo.TestNGDemo.CalculatorTest@4686afc2]" started-at="2023-06-26T16:04:33 IST" name="beforeMethod" finished-at="2023-06-26T16:04:33 IST" duration-ms="3" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method signature="test1()[pri:0, instance:com.testng.demo.TestNGDemo.FirstTestCase@38cee291]" started-at="2023-06-26T14:45:56 IST" name="test1" finished-at="2023-06-26T14:45:56 IST" duration-ms="11" status="PASS">
+        <test-method signature="testAddReturnNegativeValue()[pri:0, instance:com.testng.demo.TestNGDemo.CalculatorTest@4686afc2]" started-at="2023-06-26T16:04:33 IST" name="testAddReturnNegativeValue" finished-at="2023-06-26T16:04:33 IST" duration-ms="8" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- test1 -->
-        <test-method is-config="true" signature="afterMethod()[pri:0, instance:com.testng.demo.TestNGDemo.FirstTestCase@38cee291]" started-at="2023-06-26T14:45:56 IST" name="afterMethod" finished-at="2023-06-26T14:45:56 IST" duration-ms="0" status="PASS">
+        </test-method> <!-- testAddReturnNegativeValue -->
+        <test-method is-config="true" signature="afterMethod()[pri:0, instance:com.testng.demo.TestNGDemo.CalculatorTest@4686afc2]" started-at="2023-06-26T16:04:33 IST" name="afterMethod" finished-at="2023-06-26T16:04:33 IST" duration-ms="1" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethod -->
-        <test-method signature="test2()[pri:0, instance:com.testng.demo.TestNGDemo.FirstTestCase@38cee291]" started-at="2023-06-26T14:45:56 IST" name="test2" finished-at="2023-06-26T14:45:56 IST" duration-ms="2" status="PASS">
+        <test-method signature="testAddReturnPositiveValue()[pri:1, instance:com.testng.demo.TestNGDemo.CalculatorTest@4686afc2]" started-at="2023-06-26T16:04:33 IST" name="testAddReturnPositiveValue" finished-at="2023-06-26T16:04:33 IST" duration-ms="17" status="FAIL">
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[expected [-6] but found [6]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: expected [-6] but found [6]
+at org.testng.Assert.fail(Assert.java:111)
+at org.testng.Assert.failNotEquals(Assert.java:1578)
+at org.testng.Assert.assertEqualsImpl(Assert.java:150)
+at org.testng.Assert.assertEquals(Assert.java:132)
+at org.testng.Assert.assertEquals(Assert.java:1419)
+at org.testng.Assert.assertEquals(Assert.java:1383)
+at org.testng.Assert.assertEquals(Assert.java:1429)
+at com.testng.demo.TestNGDemo.CalculatorTest.testAddReturnPositiveValue(CalculatorTest.java:20)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:227)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:957)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:200)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+at org.testng.TestRunner.privateRun(TestRunner.java:848)
+at org.testng.TestRunner.run(TestRunner.java:621)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:443)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:437)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:397)
+at org.testng.SuiteRunner.run(SuiteRunner.java:336)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1280)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1200)
+at org.testng.TestNG.runSuites(TestNG.java:1114)
+at org.testng.TestNG.run(TestNG.java:1082)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- test2 -->
-        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:com.testng.demo.TestNGDemo.FirstTestCase@38cee291]" started-at="2023-06-26T14:45:56 IST" name="beforeMethod" finished-at="2023-06-26T14:45:56 IST" duration-ms="0" status="PASS">
+        </test-method> <!-- testAddReturnPositiveValue -->
+        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:com.testng.demo.TestNGDemo.CalculatorTest@4686afc2]" started-at="2023-06-26T16:04:33 IST" name="beforeMethod" finished-at="2023-06-26T16:04:33 IST" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method is-config="true" signature="afterMethod()[pri:0, instance:com.testng.demo.TestNGDemo.FirstTestCase@38cee291]" started-at="2023-06-26T14:45:56 IST" name="afterMethod" finished-at="2023-06-26T14:45:56 IST" duration-ms="1" status="PASS">
+        <test-method is-config="true" signature="afterMethod()[pri:0, instance:com.testng.demo.TestNGDemo.CalculatorTest@4686afc2]" started-at="2023-06-26T16:04:33 IST" name="afterMethod" finished-at="2023-06-26T16:04:33 IST" duration-ms="1" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethod -->
-        <test-method is-config="true" signature="afterClass()[pri:0, instance:com.testng.demo.TestNGDemo.FirstTestCase@38cee291]" started-at="2023-06-26T14:45:56 IST" name="afterClass" finished-at="2023-06-26T14:45:56 IST" duration-ms="0" status="PASS">
+        <test-method signature="testSquareRootReturnPositiveValue()[pri:2, instance:com.testng.demo.TestNGDemo.CalculatorTest@4686afc2]" started-at="2023-06-26T16:04:33 IST" name="testSquareRootReturnPositiveValue" finished-at="2023-06-26T16:04:33 IST" duration-ms="5" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testSquareRootReturnPositiveValue -->
+        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:com.testng.demo.TestNGDemo.CalculatorTest@4686afc2]" started-at="2023-06-26T16:04:33 IST" name="beforeMethod" finished-at="2023-06-26T16:04:33 IST" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method is-config="true" signature="afterMethod()[pri:0, instance:com.testng.demo.TestNGDemo.CalculatorTest@4686afc2]" started-at="2023-06-26T16:04:33 IST" name="afterMethod" finished-at="2023-06-26T16:04:33 IST" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method is-config="true" signature="afterClass()[pri:0, instance:com.testng.demo.TestNGDemo.CalculatorTest@4686afc2]" started-at="2023-06-26T16:04:33 IST" name="afterClass" finished-at="2023-06-26T16:04:33 IST" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterClass -->
-        <test-method is-config="true" signature="afterTest()[pri:0, instance:com.testng.demo.TestNGDemo.FirstTestCase@38cee291]" started-at="2023-06-26T14:45:56 IST" name="afterTest" finished-at="2023-06-26T14:45:56 IST" duration-ms="0" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterTest -->
-      </class> <!-- com.testng.demo.TestNGDemo.FirstTestCase -->
+      </class> <!-- com.testng.demo.TestNGDemo.CalculatorTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
