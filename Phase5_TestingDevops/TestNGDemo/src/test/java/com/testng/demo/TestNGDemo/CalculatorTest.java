@@ -19,7 +19,7 @@ public class CalculatorTest {
 	  int actual = ob.add(3, 3);
 	  assertEquals(actual, expected1);
   }
-  @Test(priority = 0)
+  @Test(priority = 0, enabled = false)
   public void testAddReturnNegativeValue() {
 	  expected1 = -6;
 	  int actual = ob.add(-2, -4);

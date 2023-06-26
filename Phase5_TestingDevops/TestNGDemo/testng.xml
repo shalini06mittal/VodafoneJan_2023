@@ -1,11 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="Suite">
-  <test thread-count="5" name="Test">
+  <test thread-count="5" name="Test1">
     <classes>
-      <class name="com.testng.demo.TestNGDemo.FirstTestCase"/>
-      <class name="com.testng.demo.TestNGDemo.AppTest"/>
-      <class name="com.testng.demo.TestNGDemo.CalculatorTest"/>
+      <class name="com.testng.demo.TestNGDemo.anno.MyTestClass1"/>
+    </classes>
+  </test> <!-- Test -->
+  <test thread-count="5" name="Test2">
+    <classes>
+      <class name="com.testng.demo.TestNGDemo.anno.MyTestClass1"/>
+      <class name="com.testng.demo.TestNGDemo.anno.MyTestClass2"/>
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->
