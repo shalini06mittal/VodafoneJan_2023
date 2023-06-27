@@ -1,29 +1,41 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+<testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-06-27T16:45:48 IST" name="Default suite" finished-at="2023-06-27T16:46:01 IST" duration-ms="12596">
+  <suite started-at="2023-06-27T17:10:07 IST" name="Default suite" finished-at="2023-06-27T17:11:44 IST" duration-ms="97450">
     <groups>
     </groups>
-    <test started-at="2023-06-27T16:45:48 IST" name="Default test" finished-at="2023-06-27T16:46:01 IST" duration-ms="12596">
-      <class name="com.selenium.SeleniumDemo.TestFindByXpath">
-        <test-method is-config="true" signature="beforeClass()[pri:0, instance:com.selenium.SeleniumDemo.TestFindByXpath@710c2b53]" started-at="2023-06-27T16:45:48 IST" name="beforeClass" finished-at="2023-06-27T16:45:48 IST" duration-ms="24" status="PASS">
+    <test started-at="2023-06-27T17:10:07 IST" name="Default test" finished-at="2023-06-27T17:11:44 IST" duration-ms="97450">
+      <class name="com.selenium.SeleniumDemo.TestLamdaTestSignUp">
+        <test-method is-config="true" signature="beforeClass()[pri:0, instance:com.selenium.SeleniumDemo.TestLamdaTestSignUp@5386659f]" started-at="2023-06-27T17:10:07 IST" name="beforeClass" finished-at="2023-06-27T17:10:07 IST" duration-ms="32" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeClass -->
-        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:com.selenium.SeleniumDemo.TestFindByXpath@710c2b53]" started-at="2023-06-27T16:45:48 IST" name="beforeMethod" finished-at="2023-06-27T16:45:54 IST" duration-ms="5595" status="PASS">
+        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:com.selenium.SeleniumDemo.TestLamdaTestSignUp@5386659f]" started-at="2023-06-27T17:10:07 IST" name="beforeMethod" finished-at="2023-06-27T17:10:32 IST" duration-ms="24719" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method signature="testDriverCommands()[pri:0, instance:com.selenium.SeleniumDemo.TestFindByXpath@710c2b53]" started-at="2023-06-27T16:45:54 IST" name="testDriverCommands" finished-at="2023-06-27T16:46:00 IST" duration-ms="6769" status="PASS">
+        <test-method signature="testClickOnSignUpLink()[pri:0, instance:com.selenium.SeleniumDemo.TestLamdaTestSignUp@5386659f]" started-at="2023-06-27T17:10:32 IST" name="testClickOnSignUpLink" finished-at="2023-06-27T17:10:55 IST" duration-ms="23258" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- testDriverCommands -->
-        <test-method is-config="true" signature="afterMethod()[pri:0, instance:com.selenium.SeleniumDemo.TestFindByXpath@710c2b53]" started-at="2023-06-27T16:46:00 IST" name="afterMethod" finished-at="2023-06-27T16:46:01 IST" duration-ms="131" status="PASS">
+        </test-method> <!-- testClickOnSignUpLink -->
+        <test-method is-config="true" signature="afterMethod()[pri:0, instance:com.selenium.SeleniumDemo.TestLamdaTestSignUp@5386659f]" started-at="2023-06-27T17:10:55 IST" name="afterMethod" finished-at="2023-06-27T17:10:55 IST" duration-ms="117" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethod -->
-      </class> <!-- com.selenium.SeleniumDemo.TestFindByXpath -->
+        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:com.selenium.SeleniumDemo.TestLamdaTestSignUp@5386659f]" started-at="2023-06-27T17:10:55 IST" name="beforeMethod" finished-at="2023-06-27T17:11:17 IST" duration-ms="21569" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method signature="testSignUpPageFillForm()[pri:0, instance:com.selenium.SeleniumDemo.TestLamdaTestSignUp@5386659f]" started-at="2023-06-27T17:11:17 IST" name="testSignUpPageFillForm" finished-at="2023-06-27T17:11:44 IST" duration-ms="27453" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testSignUpPageFillForm -->
+        <test-method is-config="true" signature="afterMethod()[pri:0, instance:com.selenium.SeleniumDemo.TestLamdaTestSignUp@5386659f]" started-at="2023-06-27T17:11:44 IST" name="afterMethod" finished-at="2023-06-27T17:11:44 IST" duration-ms="210" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+      </class> <!-- com.selenium.SeleniumDemo.TestLamdaTestSignUp -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
