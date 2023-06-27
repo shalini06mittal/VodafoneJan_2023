@@ -3,14 +3,14 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.selenium.SeleniumDemo.TestFindByDemo">
+      <class name="com.selenium.SeleniumDemo.TestFindByXpath">
         <methods>
+          <include name="afterMethod"/>
+          <include name="testDriverCommands"/>
           <include name="beforeClass"/>
           <include name="beforeMethod"/>
-          <include name="testDriverCommands"/>
-          <include name="afterMethod"/>
         </methods>
-      </class> <!-- com.selenium.SeleniumDemo.TestFindByDemo -->
+      </class> <!-- com.selenium.SeleniumDemo.TestFindByXpath -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
