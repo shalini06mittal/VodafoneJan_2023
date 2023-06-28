@@ -1,98 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="1" passed="0" failed="1" skipped="0">
+<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-06-28T14:25:08 IST" name="Default suite" finished-at="2023-06-28T14:25:17 IST" duration-ms="9895">
+  <suite started-at="2023-06-28T15:05:28 IST" name="Default suite" finished-at="2023-06-28T15:06:09 IST" duration-ms="41373">
     <groups>
     </groups>
-    <test started-at="2023-06-28T14:25:08 IST" name="Default test" finished-at="2023-06-28T14:25:17 IST" duration-ms="9895">
-      <class name="com.selenium.SeleniumDemo.TestIFrameClick">
-        <test-method is-config="true" signature="beforeClass()[pri:0, instance:com.selenium.SeleniumDemo.TestIFrameClick@710c2b53]" started-at="2023-06-28T14:25:08 IST" name="beforeClass" finished-at="2023-06-28T14:25:08 IST" duration-ms="30" status="PASS">
+    <test started-at="2023-06-28T15:05:28 IST" name="Default test" finished-at="2023-06-28T15:06:09 IST" duration-ms="41373">
+      <class name="com.selenium.SeleniumDemo.TestSwitchWindow">
+        <test-method is-config="true" signature="beforeClass()[pri:0, instance:com.selenium.SeleniumDemo.TestSwitchWindow@710c2b53]" started-at="2023-06-28T15:05:28 IST" name="beforeClass" finished-at="2023-06-28T15:05:28 IST" duration-ms="37" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeClass -->
-        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:com.selenium.SeleniumDemo.TestIFrameClick@710c2b53]" started-at="2023-06-28T14:25:08 IST" name="beforeMethod" finished-at="2023-06-28T14:25:14 IST" duration-ms="6179" status="PASS">
+        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:com.selenium.SeleniumDemo.TestSwitchWindow@710c2b53]" started-at="2023-06-28T15:05:28 IST" name="beforeMethod" finished-at="2023-06-28T15:05:34 IST" duration-ms="6654" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method signature="testImageClick()[pri:0, instance:com.selenium.SeleniumDemo.TestIFrameClick@710c2b53]" started-at="2023-06-28T14:25:14 IST" name="testImageClick" finished-at="2023-06-28T14:25:17 IST" duration-ms="3473" status="FAIL">
-          <exception class="org.openqa.selenium.NoSuchElementException">
-            <message>
-              <![CDATA[no such element: Unable to locate element: {"method":"link text","selector":"Deprecated"}
-  (Session info: chrome=114.0.5735.133)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
-Build info: version: '4.10.0', revision: 'c14d967899'
-System info: os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.16', java.version: '11.0.12'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [cf21df43e6d3050f686e80aa81388400, findElement {using=link text, value=Deprecated}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 114.0.5735.133, chrome: {chromedriverVersion: 114.0.5735.90 (386bc09e8f4f..., userDataDir: /var/folders/58/q09ltn7x0zq...}, goog:chromeOptions: {debuggerAddress: localhost:55134}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: mac, proxy: Proxy(), se:cdp: ws://localhost:55134/devtoo..., se:cdpVersion: 114.0.5735.133, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: cf21df43e6d3050f686e80aa81388400]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"link text","selector":"Deprecated"}
-  (Session info: chrome=114.0.5735.133)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
-Build info: version: '4.10.0', revision: 'c14d967899'
-System info: os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.16', java.version: '11.0.12'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [cf21df43e6d3050f686e80aa81388400, findElement {using=link text, value=Deprecated}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 114.0.5735.133, chrome: {chromedriverVersion: 114.0.5735.90 (386bc09e8f4f..., userDataDir: /var/folders/58/q09ltn7x0zq...}, goog:chromeOptions: {debuggerAddress: localhost:55134}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: mac, proxy: Proxy(), se:cdp: ws://localhost:55134/devtoo..., se:cdpVersion: 114.0.5735.133, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: cf21df43e6d3050f686e80aa81388400
-at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
-at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:199)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:132)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:51)
-at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:191)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:196)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:171)
-at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:531)
-at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
-at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:350)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:344)
-at com.selenium.SeleniumDemo.TestIFrameClick.testImageClick(TestIFrameClick.java:42)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-at java.base/java.lang.reflect.Method.invoke(Method.java:566)
-at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
-at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:227)
-at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
-at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:957)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:200)
-at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
-at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
-at org.testng.TestRunner.privateRun(TestRunner.java:848)
-at org.testng.TestRunner.run(TestRunner.java:621)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:443)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:437)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:397)
-at org.testng.SuiteRunner.run(SuiteRunner.java:336)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1280)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1200)
-at org.testng.TestNG.runSuites(TestNG.java:1114)
-at org.testng.TestNG.run(TestNG.java:1082)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-]]>
-            </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
+        <test-method signature="testAlertClick()[pri:0, instance:com.selenium.SeleniumDemo.TestSwitchWindow@710c2b53]" started-at="2023-06-28T15:05:34 IST" name="testAlertClick" finished-at="2023-06-28T15:06:09 IST" duration-ms="34416" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- testImageClick -->
-        <test-method is-config="true" signature="afterMethod()[pri:0, instance:com.selenium.SeleniumDemo.TestIFrameClick@710c2b53]" started-at="2023-06-28T14:25:17 IST" name="afterMethod" finished-at="2023-06-28T14:25:17 IST" duration-ms="143" status="PASS">
+        </test-method> <!-- testAlertClick -->
+        <test-method is-config="true" signature="afterMethod()[pri:0, instance:com.selenium.SeleniumDemo.TestSwitchWindow@710c2b53]" started-at="2023-06-28T15:06:09 IST" name="afterMethod" finished-at="2023-06-28T15:06:09 IST" duration-ms="179" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethod -->
-      </class> <!-- com.selenium.SeleniumDemo.TestIFrameClick -->
+      </class> <!-- com.selenium.SeleniumDemo.TestSwitchWindow -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
