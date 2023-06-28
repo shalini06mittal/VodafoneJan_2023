@@ -15,6 +15,22 @@ import org.testng.annotations.AfterClass;
 
 public class TestFindByDemo {
 	WebDriver driver; 
+	@BeforeMethod
+	  public void beforeMethod() {
+		   driver = new ChromeDriver(); 
+	  }
+
+	  @AfterMethod
+	  public void afterMethod() {
+		  //driver.quit(); // will close all the windows opened by selenium
+		  driver.close();// will only close the current window
+	  }
+
+	  @BeforeClass
+	  public void beforeClass() {
+		  System.setProperty("webdriver.chrome.driver", "/Users/Shalini/Downloads/chromedriver_mac_arm64/chromedriver");
+	  }
+
   @Test
   public void testDriverCommands() throws InterruptedException {
 	  
@@ -48,22 +64,7 @@ public class TestFindByDemo {
 	  
 	  
   }
-  @BeforeMethod
-  public void beforeMethod() {
-	   driver = new ChromeDriver(); 
-  }
-
-  @AfterMethod
-  public void afterMethod() {
-	  //driver.quit(); // will close all the windows opened by selenium
-	  driver.close();// will only close the current window
-  }
-
-  @BeforeClass
-  public void beforeClass() {
-	  System.setProperty("webdriver.chrome.driver", "/Users/Shalini/Downloads/chromedriver_mac_arm64/chromedriver");
-  }
-
+  
  
 
 }
