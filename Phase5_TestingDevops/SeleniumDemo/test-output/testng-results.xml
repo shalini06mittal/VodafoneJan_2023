@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2023-06-28T15:05:28 IST" name="Default suite" finished-at="2023-06-28T15:06:09 IST" duration-ms="41373">
+    <groups>
+    </groups>
+    <test started-at="2023-06-28T15:05:28 IST" name="Default test" finished-at="2023-06-28T15:06:09 IST" duration-ms="41373">
+      <class name="com.selenium.SeleniumDemo.TestSwitchWindow">
+        <test-method is-config="true" signature="beforeClass()[pri:0, instance:com.selenium.SeleniumDemo.TestSwitchWindow@710c2b53]" started-at="2023-06-28T15:05:28 IST" name="beforeClass" finished-at="2023-06-28T15:05:28 IST" duration-ms="37" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeClass -->
+        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:com.selenium.SeleniumDemo.TestSwitchWindow@710c2b53]" started-at="2023-06-28T15:05:28 IST" name="beforeMethod" finished-at="2023-06-28T15:05:34 IST" duration-ms="6654" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method signature="testAlertClick()[pri:0, instance:com.selenium.SeleniumDemo.TestSwitchWindow@710c2b53]" started-at="2023-06-28T15:05:34 IST" name="testAlertClick" finished-at="2023-06-28T15:06:09 IST" duration-ms="34416" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testAlertClick -->
+        <test-method is-config="true" signature="afterMethod()[pri:0, instance:com.selenium.SeleniumDemo.TestSwitchWindow@710c2b53]" started-at="2023-06-28T15:06:09 IST" name="afterMethod" finished-at="2023-06-28T15:06:09 IST" duration-ms="179" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+      </class> <!-- com.selenium.SeleniumDemo.TestSwitchWindow -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>

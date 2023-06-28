@@ -1,0 +1,9 @@
+button.add {
+    background-color: #49cb40;
+  
+    border-radius: 30%;
+  }
+  button.remove {
+    background-color: #ff2f29;
+    border-radius: 30%;
+  }

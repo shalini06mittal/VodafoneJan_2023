@@ -1,0 +1,23 @@
+a.active{
+    color:crimson !important;
+    border-bottom: 1px solid crimson;
+}
+button.badge {
+    background-color: #fff;
+    border: none;
+    color: #f04040;
+    width: 1.5rem;
+  }
+
+  .badge:after{
+    content:attr(value);
+    font-size:12px;
+    color: #fff;
+    background: red;
+    border-radius:50%;
+    padding: 0 5px;
+    position:relative;
+    left:-8px;
+    top:-10px;
+    opacity:0.9;
+}

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+"-//Hibernate/Hibernate Configuration DTD//EN"
+"http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+	<session-factory>
+		<property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+		<property name="hibernate.connection.url">jdbc:mysql://localhost:8889/voda2023</property>
+		<property name="hibernate.connection.username">root</property>
+		<property name="hibernate.connection.password">root</property>
+		<property name="dialect">org.hibernate.dialect.MySQL8Dialect</property>
+		<property name="show_sql">true</property>
+		<!-- create will drop the table if it exists and recreate
+			update will check if table exists will not recreate
+		 -->
+		<property name="hibernate.hbm2ddl.auto">update</property>
+		<property name="hibernate.current_session_context_class">thread</property>
+		 <!-- <mapping resource="book.hbm.xml"></mapping>
+		 <mapping class="com.bean.Author"></mapping> -->
+		<!--  <mapping class="com.bean.Employee"></mapping>
+		 <mapping class="com.bean.UniqueIdentification"></mapping>
+		  <mapping class="com.bean.Supplier"></mapping> -->
+		  <!-- <mapping class="com.bean.Question"></mapping>
+		  <mapping class="com.bean.User"></mapping> -->
+		   <mapping class="com.bean.Product"></mapping>
+		    <mapping class="com.bean.Store"></mapping>
+		 <!-- <mapping class="com.bean.Email"></mapping> -->
+	</session-factory>
+</hibernate-configuration>

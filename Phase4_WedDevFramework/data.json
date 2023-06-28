@@ -1,0 +1,96 @@
+{
+  "items": [
+    {
+      "id": 1,
+      "itemname": "Wheat Bread",
+      "price": "50",
+      "description": "Soft as clouds, white as snow, Japanese milk bread is the tender everyday loaf we want to b",
+      "imageurl": "https://assets.bonappetit.com/photos/5c62e4a3e81bbf522a9579ce/16:9/w_4000,h_2250,c_limit/milk-bread.jpg"
+    },
+    {
+      "id": 2,
+      "itemname": "Eggs",
+      "price": "10",
+      "description": "There are many nutritional benefits of eggs for kids. Get expert advice on how to get kids to eat",
+      "imageurl": "https://www.licious.in/blog/wp-content/uploads/2022/01/eggs-1-1024x1024.jpg"
+    },
+    {
+      "id": 3,
+      "itemname": "Whole Milk",
+      "price": "80",
+      "description": "Whole milk is cow's milk that hasn't had its fat content stripped. The milk retains its fat (about 3.5 percent) and is slightly thick. ",
+      "imageurl": "data:image/jpeg;base64,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"
+    }
+  ],
+  "users": [
+    {
+      "username": "admin",
+      "password": "admin123",
+      "id": 1,
+      "role": "admin"
+    },
+    {
+      "id": 2,
+      "username": "shalini",
+      "password": "shalini123",
+      "email": "shalini@gmail.com",
+      "role": "user"
+    },
+    {
+      "id": 3,
+      "username": "priyanka",
+      "password": "priy123",
+      "email": "priyanka@gmail.com",
+      "role": "user"
+    },
+    {
+      "username": "test",
+      "password": "test123",
+      "email": "test@gmail.com",
+      "id": 4,
+      "role": "user"
+    },
+    {
+      "username": "denisa",
+      "password": "den123",
+      "email": "denisa@gmail.com",
+      "id": 5
+    },
+    {
+      "username": "michael",
+      "password": "mic123",
+      "email": "michael@gmail.com",
+      "role": "user",
+      "id": 6
+    },
+    {
+      "username": "abc",
+      "password": "abc123",
+      "email": "abc@gmail.com",
+      "role": "user",
+      "id": 7
+    },
+    {
+      "username": "aa",
+      "password": "aa",
+      "email": "aa@g.c",
+      "role": "user",
+      "id": 8
+    }
+  ],
+  "orders":[
+    {
+      "id":1,
+      "username":"shalini",
+      "items":[
+        {
+          "itemid":1,
+          "qty":1,
+          "price":50,
+          "total":50
+        }
+      ]
+     
+    }
+  ]
+}
