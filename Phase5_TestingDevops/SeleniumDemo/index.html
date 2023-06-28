@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+<h1 id='h1'>This is test page for wait</h1>
+
+	<script type="text/javascript">
+	
+	setTimeout(() => {
+        var p = document.createElement("p")
+	    p.setAttribute('id','p1')
+	    p.innerText = 'Hey'
+	    p.addEventListener('click',()=> alert('hi'))
+	    var ele = document.getElementById('h1');
+	    ele.appendChild(p);
+    }, 3000);
+	</script>
+</body>
+</html>
