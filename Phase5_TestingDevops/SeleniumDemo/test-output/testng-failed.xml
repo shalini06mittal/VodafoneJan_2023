@@ -3,14 +3,14 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.selenium.SeleniumDemo.TestWaitDemo">
+      <class name="com.selenium.SeleniumDemo.TestFileUpload">
         <methods>
-          <include name="testAlertClick"/>
+          <include name="beforeMethod"/>
           <include name="afterMethod"/>
           <include name="beforeClass"/>
-          <include name="beforeMethod"/>
+          <include name="testAlertClick"/>
         </methods>
-      </class> <!-- com.selenium.SeleniumDemo.TestWaitDemo -->
+      </class> <!-- com.selenium.SeleniumDemo.TestFileUpload -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

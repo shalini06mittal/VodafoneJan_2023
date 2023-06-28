@@ -6,9 +6,20 @@
 </head>
 <body>
 
-<h1 id='h1'>This is test page for wait</h1>
+	<h1 id='h1'>This is test page for wait</h1>
 
-	<script type="text/javascript">
+	<form action="">
+		<input type="checkbox" onclick="change(this)" id="c1">Click<br>
+		<button disabled id="b1">Tick Checkbox</button>
+	</form>
+
+	<script>
+        function change(ele)
+        {
+            var ele1 = document.getElementById('b1')
+            
+            ele1.disabled = !ele.checked
+        }
 	
 	setTimeout(() => {
         var p = document.createElement("p")
