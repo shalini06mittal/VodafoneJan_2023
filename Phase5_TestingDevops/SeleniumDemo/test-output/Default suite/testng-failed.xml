@@ -3,14 +3,14 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.selenium.SeleniumDemo.TestFileUpload">
+      <class name="com.selenium.SeleniumDemo.DynamicToolTipDemo">
         <methods>
-          <include name="beforeMethod"/>
-          <include name="afterMethod"/>
-          <include name="beforeClass"/>
           <include name="testAlertClick"/>
+          <include name="beforeClass"/>
+          <include name="afterMethod"/>
+          <include name="beforeMethod"/>
         </methods>
-      </class> <!-- com.selenium.SeleniumDemo.TestFileUpload -->
+      </class> <!-- com.selenium.SeleniumDemo.DynamicToolTipDemo -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
