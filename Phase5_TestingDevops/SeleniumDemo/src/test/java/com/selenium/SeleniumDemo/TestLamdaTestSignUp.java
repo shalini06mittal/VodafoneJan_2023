@@ -1,6 +1,9 @@
 package com.selenium.SeleniumDemo;
 
 import org.testng.annotations.Test;
+import org.testng.annotations.BeforeClass;
+import org.testng.AssertJUnit;
+import org.testng.annotations.Test;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
@@ -24,7 +27,7 @@ public class TestLamdaTestSignUp {
 	  eleSignUp.click();
 	  Thread.sleep(3000); 
 	  String title = driver.getTitle();
-	  assertEquals(title, "Sign up for free | Cross Browser Testing Tool | LambdaTest");
+	  AssertJUnit.assertEquals(title, "Sign up for free | Cross Browser Testing Tool | LambdaTest");
 	  
   }
   @Test

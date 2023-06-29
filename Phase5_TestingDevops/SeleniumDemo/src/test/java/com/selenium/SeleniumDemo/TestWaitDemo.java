@@ -1,5 +1,7 @@
 package com.selenium.SeleniumDemo;
 
+import org.testng.annotations.Test;
+import org.testng.annotations.BeforeClass;
 import java.time.Duration;
 import java.util.concurrent.TimeUnit;
 

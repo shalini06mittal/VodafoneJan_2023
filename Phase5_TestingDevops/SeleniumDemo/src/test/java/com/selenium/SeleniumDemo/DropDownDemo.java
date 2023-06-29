@@ -1,5 +1,8 @@
 package com.selenium.SeleniumDemo;
 
+import org.testng.annotations.Test;
+import org.testng.annotations.BeforeClass;
+import org.testng.AssertJUnit;
 import static org.testng.Assert.assertEquals;
 
 import java.util.List;
@@ -55,6 +58,6 @@ public class DropDownDemo {
 		  Thread.sleep(3000);
 		  
 		  Select selectedCountries = new Select(driver.findElement(By.name("ToLB")));
-		  assertEquals(selectedCountries.getOptions().size(), 2); 
+		  AssertJUnit.assertEquals(selectedCountries.getOptions().size(), 2); 
 	  }
 }

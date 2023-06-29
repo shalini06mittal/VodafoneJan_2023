@@ -1,5 +1,8 @@
 package com.selenium.SeleniumDemo;
 
+import org.testng.annotations.Test;
+import org.testng.annotations.BeforeClass;
+import org.testng.AssertJUnit;
 import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertNotNull;
 
@@ -45,7 +48,7 @@ public class StaticToolTipDemo {
 		
 		 String title = eleEnvelope.getAttribute("title");
 		 
-		 assertEquals(title, "Mail");
+		 AssertJUnit.assertEquals(title, "Mail");
 		
 				 
 	  }

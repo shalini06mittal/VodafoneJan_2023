@@ -1,5 +1,8 @@
 package com.selenium.SeleniumDemo;
 
+import org.testng.annotations.Test;
+import org.testng.annotations.BeforeClass;
+import org.testng.AssertJUnit;
 import static org.testng.Assert.assertNotNull;
 
 import java.time.Duration;
@@ -55,7 +58,7 @@ public class DragAndDropDemo {
 		 Thread.sleep(2000);
 		 WebElement ele =  eleTarget.findElement(By.id("dragA"));
 		 System.out.println(ele.getTagName());
-		 assertNotNull(ele);
+		 AssertJUnit.assertNotNull(ele);
 				 
 	  }
 }

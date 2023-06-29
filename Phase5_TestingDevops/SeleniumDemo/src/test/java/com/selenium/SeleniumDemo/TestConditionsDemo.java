@@ -1,5 +1,8 @@
 package com.selenium.SeleniumDemo;
 
+import org.testng.annotations.Test;
+import org.testng.annotations.BeforeClass;
+import org.testng.AssertJUnit;
 import static org.testng.Assert.assertFalse;
 import static org.testng.Assert.assertTrue;
 
@@ -38,14 +41,14 @@ public class TestConditionsDemo {
 		 driver.manage().window().maximize();
 		 WebElement ele = driver.findElement(By.id("b1"));
 		 WebElement checkbox = driver.findElement(By.id("c1"));
-		 assertFalse(checkbox.isSelected());
-		 assertFalse(ele.isEnabled());
+		 AssertJUnit.assertFalse(checkbox.isSelected());
+		 AssertJUnit.assertFalse(ele.isEnabled());
 		 
 		 Thread.sleep(2000);
 		
 		 checkbox.click();
-		 assertTrue(ele.isEnabled());
-		 assertTrue(checkbox.isSelected());
+		 AssertJUnit.assertTrue(ele.isEnabled());
+		 AssertJUnit.assertTrue(checkbox.isSelected());
 		 Thread.sleep(2000);
 		 
 	  }

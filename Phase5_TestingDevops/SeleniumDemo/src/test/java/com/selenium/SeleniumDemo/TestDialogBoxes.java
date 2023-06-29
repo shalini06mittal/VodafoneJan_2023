@@ -1,5 +1,8 @@
 package com.selenium.SeleniumDemo;
 
+import org.testng.annotations.Test;
+import org.testng.annotations.BeforeClass;
+import org.testng.AssertJUnit;
 import static org.testng.Assert.assertEquals;
 
 import java.util.List;
@@ -46,7 +49,7 @@ public class TestDialogBoxes {
 		  
 		  Alert alert = driver.switchTo().alert();
 		  
-		  assertEquals(alert.getText(), "Hello , share this practice page and share your knowledge");
+		  AssertJUnit.assertEquals(alert.getText(), "Hello , share this practice page and share your knowledge");
 		 
 		  alert.dismiss();
 		  Thread.sleep(2000);

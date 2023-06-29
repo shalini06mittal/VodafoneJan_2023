@@ -1,5 +1,8 @@
 package com.selenium.SeleniumDemo;
 
+import org.testng.annotations.Test;
+import org.testng.annotations.BeforeClass;
+import org.testng.AssertJUnit;
 import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertFalse;
 import static org.testng.Assert.assertTrue;
@@ -63,11 +66,11 @@ public class TestSwitchWindow {
 				 
 				 WebElement label = driver.findElement(By.id("message9"));
 				 System.out.println("label text "+label.getText());
-				 assertTrue(label.getText().isBlank());
+				 AssertJUnit.assertTrue(label.getText().isBlank());
 				
 				 driver.findElement(By.name("btnLogin")).click();
 				 System.out.println("label text "+label.getText());
-				 assertFalse(label.getText().isBlank());
+				 AssertJUnit.assertFalse(label.getText().isBlank());
 				 
 				 driver.findElement(By.name("emailid")).sendKeys("dummy@gmail.com");
 				 Thread.sleep(2000);

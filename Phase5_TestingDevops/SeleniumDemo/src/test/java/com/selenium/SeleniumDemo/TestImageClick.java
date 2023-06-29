@@ -1,5 +1,8 @@
 package com.selenium.SeleniumDemo;
 
+import org.testng.annotations.Test;
+import org.testng.annotations.BeforeClass;
+import org.testng.AssertJUnit;
 import static org.testng.Assert.assertEquals;
 
 import java.util.List;
@@ -44,9 +47,9 @@ public class TestImageClick {
 		  Thread.sleep(3000);
 		  
 		  WebElement ele = driver.findElement(By.id("page-title-heading"));
-		  assertEquals(ele.getText(), "Tees");
+		  AssertJUnit.assertEquals(ele.getText(), "Tees");
 		  WebElement ele1 = driver.findElement(By.id("toolbar-amount"));
-		  assertEquals(ele1.getText(), "12 Items");
+		  AssertJUnit.assertEquals(ele1.getText(), "12 Items");
 		  
 	  }
 }

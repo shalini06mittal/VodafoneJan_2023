@@ -1,5 +1,7 @@
 package com.selenium.SeleniumDemo;
 
+import org.testng.annotations.Test;
+import org.testng.annotations.BeforeClass;
 import static org.testng.Assert.assertFalse;
 import static org.testng.Assert.assertTrue;
 

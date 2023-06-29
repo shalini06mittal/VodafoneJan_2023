@@ -1,5 +1,8 @@
 package com.selenium.SeleniumDemo;
 
+import org.testng.annotations.Test;
+import org.testng.annotations.BeforeClass;
+import org.testng.AssertJUnit;
 import static org.testng.Assert.assertEquals;
 
 import java.util.List;
@@ -45,7 +48,7 @@ public class TestIFrameClick {
 		  Thread.sleep(3000);
 		  
 		  WebElement ele = driver.findElement(By.xpath("/html/body/div[3]/h1"));
-		  assertEquals(ele.getText(), "Deprecated API");
+		  AssertJUnit.assertEquals(ele.getText(), "Deprecated API");
 		 
 	  }
 }
