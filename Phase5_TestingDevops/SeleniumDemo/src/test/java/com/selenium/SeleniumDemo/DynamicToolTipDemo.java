@@ -52,7 +52,6 @@ public class DynamicToolTipDemo {
 		 WebElement eleText = driver.findElement(By.xpath("//*[@id=\"demo_content\"]/div/div/div/a"));
 		
 		 
-		 
 		 assertEquals(eleText.getText(), expectedText);
 		
 				 
