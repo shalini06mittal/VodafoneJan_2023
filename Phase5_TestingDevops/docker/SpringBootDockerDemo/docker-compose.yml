@@ -1,0 +1,18 @@
+version: "3"
+services:
+  mongo_db:
+    image: mongo
+    container_name: mongo-dbase
+    restart: always
+    ports:
+      - 27017:27017
+
+  userservice:                        #it is just a name, which will be used only in this file.
+      image: springmongoimg               #name of the image after dockerfile executes
+      ports:
+        - "8080:8080"                       #docker containter port with your os port
+      restart: always  
+      depends_on:                           #define dependencies of this app
+        - mongo_db    
+        
+                                    #dependency name (which is defined with this name 'db' in this file earlier)
